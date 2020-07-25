@@ -1,0 +1,3 @@
+include ':tcd'
+include ':app'
+rootProject.name = "MyLib"
