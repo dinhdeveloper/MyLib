@@ -19,18 +19,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-       AlertConfirmSuccess.showAlertConfirmSuccess(MainActivity.this, "test", "dadads", "asdasaffsff", new AlertConfirmSuccess.ConfirmClickListener() {
-           @Override
-           public void setConfirmClickListener(SweetAlertDialog dialog) {
-               dialog
-                       .setTitleText("Deleted!")
-                       .setContentText("Your imaginary file has been deleted!")
-                       .setConfirmText("OK")
-                       .setConfirmClickListener(null)
-                       .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
-           }
-       });
-
     }
 }

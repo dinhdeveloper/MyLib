@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr_gender">
+        <item>Nam</item>
+        <item>Nữ</item>
+    </string-array>
+    <string-array name="opacity">
+        <item>100% — FF</item>
+        <item>95% — F2</item>
+        <item>90% — E6</item>
+        <item>85% — D9</item>
+        <item>80% — CC</item>
+        <item>75% — BF</item>
+        <item>70% — B3</item>
+        <item>65% — A6</item>
+        <item>60% — 99</item>
+        <item>55% — 8C</item>
+        <item>50% — 80</item>
+        <item>45% — 73</item>
+        <item>40% — 66</item>
+        <item>35% — 59</item>
+        <item>30% — 4D</item>
+        <item>25% — 40</item>
+        <item>20% — 33</item>
+        <item>15% — 26</item>
+        <item>10% — 1A</item>
+        <item>5% — 0D</item>
+        <item>0% — 00</item>
+    </string-array>
+    <string-array name="week_sun_sat">
+        <item>@string/cdrp_sun</item>
+        <item>@string/cdrp_mon</item>
+        <item>@string/cdrp_tue</item>
+        <item>@string/cdrp_wed</item>
+        <item>@string/cdrp_thu</item>
+        <item>@string/cdrp_fri</item>
+        <item>@string/cdrp_sat</item>
+    </string-array>
+    <attr name="customPickerStyle" format="reference" />
+    <attr name="rv_backgroundColor" format="color" />
+    <attr name="rv_backgroundPressColor" format="color" />
+    <attr name="rv_cornerRadius" format="dimension" />
+    <attr name="rv_cornerRadius_BL" format="dimension" />
+    <attr name="rv_cornerRadius_BR" format="dimension" />
+    <attr name="rv_cornerRadius_TL" format="dimension" />
+    <attr name="rv_cornerRadius_TR" format="dimension" />
+    <attr name="rv_isRadiusHalfHeight" format="boolean" />
+    <attr name="rv_isRippleEnable" format="boolean" />
+    <attr name="rv_isWidthHeightEqual" format="boolean" />
+    <attr name="rv_strokeColor" format="color" />
+    <attr name="rv_strokePressColor" format="color" />
+    <attr name="rv_strokeWidth" format="dimension" />
+    <attr name="rv_textPressColor" format="color" />
+    <color name="bg_edit_text_booking_form">#888888</color>
+    <color name="bg_item_normal_state">#ffffff</color>
+    <color name="bg_item_swiping_active_state">#ff9999ff</color>
+    <color name="bg_item_swiping_state">#ffddddff</color>
+    <color name="bg_swipe_item_delete">#f05050</color>
+    <color name="black">#333333</color>
+    <color name="black_alpha_0p">#00000000</color>
+    <color name="black_alpha_50p">#74000000</color>
+    <color name="black_alpha_70p">#b2000000</color>
+    <color name="blue">#0099CC</color>
+    <color name="blue_background_card">#3b73af</color>
+    <color name="blue_background_login_fb">#3b5998</color>
+    <color name="blue_background_login_fb_press">#303F9F</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+    <color name="blue_light">#73c3fe</color>
+    <color name="bright_blue">#33B5E5</color>
+    <color name="button_hd_banhang">#edf1f2</color>
+    <color name="button_press">#4c7c7c7c</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="calendar_header">@color/colorPrimary</color>
+    <color name="calendar_header_title">#FFF</color>
+    <color name="calendar_text">#474747</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorDangerButton">#FF5252</color>
+    <color name="colorInversePrimaryText">#FFFFFF</color>
+    <color name="colorPrimary">#009464</color>
+    <color name="colorPrimaryButton">#2196F3</color>
+    <color name="colorPrimaryDark">#009464</color>
+    <color name="colorRouteLine">#FF4081</color>
+    <color name="colorSuccessButton">#0F9D58</color>
+    <color name="color_background_default">#f2f2f2</color>
+    <color name="color_button_tab_bg_active">#ee3939</color>
+    <color name="color_button_tab_bg_normal">#ffffff</color>
+    <color name="color_button_tab_stroke">#E0E0E0</color>
+    <color name="color_button_tab_text_active">#ffffff</color>
+    <color name="color_button_tab_text_normal">#929292</color>
+    <color name="color_danger">#f05050</color>
+    <color name="color_danger_active">#ee3939</color>
+    <color name="color_default">#fcfdfd</color>
+    <color name="color_default_active">#edf1f2</color>
+    <color name="color_info">#23b7e5</color>
+    <color name="color_info_active">#19a9d5</color>
+    <color name="color_primary">#7266ba</color>
+    <color name="color_primary_active">#6254b2</color>
+    <color name="color_success">#27c24c</color>
+    <color name="color_success_active">#23ad44</color>
+    <color name="color_text_booking_form">#555555</color>
+    <color name="color_text_booking_form_light">#959595</color>
+    <color name="color_text_default">#808080</color>
+    <color name="contentTextColor">#4d4d4d</color>
+    <color name="contentTextHintColor">#b8b8b8</color>
+    <color name="contentTextHintColorDarker">#999999</color>
+    <color name="date_color">#000</color>
+    <color name="default_date_color">#3b4144</color>
+    <color name="disable_date_color">#BDBDBD</color>
+    <color name="error_stroke_color">#F27474</color>
+    <color name="fillColorNavigation">#FFFFFF</color>
+    <color name="float_transparent">#00000000</color>
+    <color name="gray">#a6a6a6</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <item name="gray_holo_dark" type="color">#ff464646</item>
+    <item name="gray_holo_light" type="color">#ffd0d0d0</item>
+    <color name="gray_light">#d2d4d6</color>
+    <color name="gray_light_opacity">#DCBBBBBB</color>
+    <color name="gray_very_light">#DDDDDD</color>
+    <color name="grey1">#444444</color>
+    <color name="grey2">#929292</color>
+    <color name="grey3">#E0E0E0</color>
+    <color name="grey4">#F2F2F2</color>
+    <color name="grey5">#F6F6F6</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="kalert_dialog_bg_color">#FFFFFF</color>
+    <color name="kprogresshud_default_color">#b1000000</color>
+    <color name="kprogresshud_grey_color">#449E9E9E</color>
+    <color name="light_gray">#d9d9d9</color>
+    <color name="light_gray_border">#d9d9d9</color>
+    <color name="loginBackground">#7266ba</color>
+    <color name="login_button">#5d54ba</color>
+    <color name="login_button_press">#5452c1</color>
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
+    <color name="mb_gray">#66dedede</color>
+    <color name="medium_gray">#959595</color>
+    <color name="progressBackground">#32000000</color>
+    <color name="progressColor">#FF5252</color>
+    <color name="progressColorTextTitle">#808080</color>
+    <color name="range_bg_color">#B7C99D</color>
+    <color name="range_bg_color_app">#FFCDD2</color>
+    <color name="range_date_color">@color/default_date_color</color>
+    <color name="red">#e31b23</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="red_press">#b61619</color>
+    <color name="selected_date_circle_color">#54B948</color>
+    <color name="selected_date_circle_color_app">#FF5252</color>
+    <color name="selected_date_color">#FFF</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="text_color">#575757</color>
+    <color name="titleSelectedTabColor">#3F51B5</color>
+    <color name="titleTabColor">#000000</color>
+    <color name="titleTextColor">#FFFFFF</color>
+    <color name="title_color">#000</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="transparent">#00000000</color>
+    <color name="tutorial_bg">#BE000000</color>
+    <color name="txt_default">#808080</color>
+    <color name="vw_dark_grey">#AAAAAA</color>
+    <color name="vw_grey">#F6F6F6</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+    <color name="week_color">#000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_opacity">#DCffffff</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <declare-styleable name="BirthdayInput">
+        <attr name="ldp_text_color" format="color" />
+        <attr name="ldp_hint_color" format="color" />
+        <attr name="ldp_date_format">
+            <flag name="mm-dd-yyyy" value="1" />
+            <flag name="dd-mm-yyyy" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CalendarView">
+        <attr name="titleColor" format="color" />
+        <attr name="titleLayout" format="reference" />
+        <attr name="weekColor" format="color" />
+        <attr name="weekBackground" format="color|reference" />
+        <attr name="monthBackground" format="color|reference" />
+        <attr name="dateDividerColor" format="color" />
+        <attr name="dateDividerSize" format="dimension" />
+        <attr name="imgLastMonth" format="reference" />
+        <attr name="imgNextMonth" format="reference" />
+        <attr name="monthValue" format="string" />
+        <attr name="language">
+            <enum name="china" value="1" />
+            <enum name="english" value="2" />
+            <enum name="vi" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CircularImageView">
+        <attr name="border" format="boolean" />
+        <attr name="border_color" format="color" />
+        <attr name="border_width" format="dimension" />
+        <attr name="selector" format="boolean" />
+        <attr name="selector_color" format="color" />
+        <attr name="selector_stroke_color" format="color" />
+        <attr name="selector_stroke_width" format="dimension" />
+        <attr name="shadow" format="boolean" />
+        <attr name="civ_shadowRadius" format="float" />
+        <attr name="civ_shadowDx" format="float" />
+        <attr name="civ_shadowDy" format="float" />
+        <attr name="civ_shadowColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CurrencyEditText">
+        <attr name="TextAlignment" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CustomButton">
+        <attr name="cb_backgroundColor" format="color" />
+        <attr name="cb_radius" format="integer" />
+        <attr name="cb_strokeColor" format="color" />
+        <attr name="cb_strokeWidth" format="integer" />
+        <attr name="cb_strokeDashWidth" format="integer" />
+        <attr name="cb_strokeDashGap" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CustomCircularImageViewTheme">
+        <attr name="circularImageViewStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CustomProgressBar">
+        <attr name="foreground_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CustomTabButton">
+        <attr name="full_width" format="boolean" />
+        <attr name="tab_width" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="DateRangeMonthView">
+        <attr name="title_color" format="color" />
+        <attr name="week_color" format="color" />
+        <attr name="range_color" format="color" />
+        <attr name="selected_date_circle_color" format="color" />
+        <attr name="selected_date_color" format="color" />
+        <attr name="default_date_color" format="color" />
+        <attr name="range_date_color" format="color" />
+        <attr name="disable_date_color" format="color" />
+        <attr name="text_size_title" format="dimension" />
+        <attr name="text_size_week" format="dimension" />
+        <attr name="text_size_date" format="dimension" />
+        <attr name="header_bg" format="integer" />
+        <attr name="calendar_tag" format="string" />
+        <attr name="week_offset" format="integer" />
+        <attr name="editable" format="boolean" />
+        <attr name="swipeable" format="boolean" />
+        <attr name="show_header" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="GraphViewXML">
+        <attr name="seriesData" format="string" />
+        <attr name="seriesType" format="string" />
+        <attr name="seriesTitle" format="string" />
+        <attr name="android:title" />
+        <attr name="seriesColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ImageCropView">
+        <attr name="gridInnerStroke" format="dimension" />
+        <attr name="gridInnerColor" format="color" />
+        <attr name="setInnerGridMode" format="integer">
+            <enum name="off" value="0" />
+            <enum name="on" value="1" />
+        </attr>
+        <attr name="gridOuterStroke" format="dimension" />
+        <attr name="gridOuterColor" format="color" />
+        <attr name="setOuterGridMode" format="integer">
+            <enum name="off" value="0" />
+            <enum name="on" value="1" />
+        </attr>
+        <attr name="gridLeftRightMargin" format="dimension" />
+        <attr name="gridTopBottomMargin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MKLoader">
+        <attr name="mk_color" format="color" />
+        <attr name="mk_type">
+            <enum name="ClassicSpinner" value="0" />
+            <enum name="FishSpinner" value="1" />
+            <enum name="LineSpinner" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MyCustomPicker">
+        <attr name="cp_width" format="dimension" />
+        <attr name="cp_height" format="dimension" />
+        <attr name="cp_accessibilityDescriptionEnabled" format="boolean" />
+        <attr name="cp_divider" format="reference" />
+        <attr name="cp_dividerColor" format="color" />
+        <attr name="cp_dividerDistance" format="dimension" />
+        <attr name="cp_dividerThickness" format="dimension" />
+        <attr name="cp_fadingEdgeEnabled" format="boolean" />
+        <attr name="cp_fadingEdgeStrength" format="float" />
+        <attr name="cp_formatter" format="string" />
+        <attr name="cp_hideWheelUntilFocused" format="boolean" />
+        <attr name="cp_lineSpacingMultiplier" format="float" />
+        <attr name="cp_max" format="integer" />
+        <attr name="cp_maxFlingVelocityCoefficient" format="integer" />
+        <attr name="cp_min" format="integer" />
+        <attr name="cp_order" format="enum">
+            <enum name="ascending" value="0" />
+            <enum name="descending" value="1" />
+        </attr>
+        <attr name="cp_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="cp_scrollerEnabled" format="boolean" />
+        <attr name="cp_selectedTextAlign" format="enum">
+            <enum name="selectedTextAlignRight" value="0" />
+            <enum name="selectedTextAlignCenter" value="1" />
+            <enum name="selectedTextAlignLeft" value="2" />
+        </attr>
+        <attr name="cp_selectedTextColor" format="color" />
+        <attr name="cp_selectedTextSize" format="dimension" />
+        <attr name="cp_selectedTextStrikeThru" format="boolean" />
+        <attr name="cp_selectedTextUnderline" format="boolean" />
+        <attr name="cp_selectedTypeface" format="string" />
+        <attr name="cp_textAlign" format="enum">
+            <enum name="textAlignRight" value="0" />
+            <enum name="textAlignCenter" value="1" />
+            <enum name="textAlignLeft" value="2" />
+        </attr>
+        <attr name="cp_textColor" format="color" />
+        <attr name="cp_textSize" format="dimension" />
+        <attr name="cp_textStrikeThru" format="boolean" />
+        <attr name="cp_textUnderline" format="boolean" />
+        <attr name="cp_typeface" format="string" />
+        <attr name="cp_value" format="integer" />
+        <attr name="cp_wheelItemCount" format="integer" />
+        <attr name="cp_wrapSelectorWheel" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="PtrClassicHeader">
+        <attr name="ptr_rotate_ani_time" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="PtrFrameLayout">
+        <attr name="ptr_header" format="reference" />
+        <attr name="ptr_content" format="reference" />
+        <attr name="ptr_resistance" format="float" />
+        <attr name="ptr_ratio_of_header_height_to_refresh" format="float" />
+        <attr name="ptr_duration_to_close" format="integer" />
+        <attr name="ptr_duration_to_close_header" format="integer" />
+        <attr name="ptr_pull_to_fresh" format="boolean" />
+        <attr name="ptr_keep_header_when_refresh" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="Rotate3dAnimation">
+        <attr name="rollType" format="enum">
+            <enum name="x" value="0" />
+            <enum name="y" value="1" />
+            <enum name="z" value="2" />
+        </attr>
+        <attr name="fromDeg" format="float" />
+        <attr name="toDeg" format="float" />
+        <attr name="pivotX" format="fraction" />
+        <attr name="pivotY" format="fraction" />
+    </declare-styleable>
+    <declare-styleable name="RoundFrameLayout">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_cornerRadius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_isRadiusHalfHeight" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_cornerRadius_TL" />
+        <attr name="rv_cornerRadius_TR" />
+        <attr name="rv_cornerRadius_BL" />
+        <attr name="rv_cornerRadius_BR" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="RoundLinearLayout">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_cornerRadius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_isRadiusHalfHeight" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_cornerRadius_TL" />
+        <attr name="rv_cornerRadius_TR" />
+        <attr name="rv_cornerRadius_BL" />
+        <attr name="rv_cornerRadius_BR" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="RoundRelativeLayout">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_cornerRadius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_isRadiusHalfHeight" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_cornerRadius_TL" />
+        <attr name="rv_cornerRadius_TR" />
+        <attr name="rv_cornerRadius_BL" />
+        <attr name="rv_cornerRadius_BR" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="RoundTextView">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_cornerRadius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_textPressColor" />
+        <attr name="rv_isRadiusHalfHeight" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_cornerRadius_TL" />
+        <attr name="rv_cornerRadius_TR" />
+        <attr name="rv_cornerRadius_BL" />
+        <attr name="rv_cornerRadius_BR" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="SlideMenuLayout">
+        <attr name="slideMode" format="enum">
+            <enum name="left" value="1001" />
+            <enum name="right" value="1002" />
+            <enum name="both" value="1003" />
+            <enum name="none" value="1004" />
+        </attr>
+        <attr name="slidePadding" format="dimension" />
+        <attr name="slideTime" format="integer" />
+        <attr name="parallax" format="boolean" />
+        <attr name="contentAlpha" format="float" />
+        <attr name="contentShadowColor" format="color" />
+        <attr name="contentToggle" format="boolean" />
+        <attr name="allowDragging" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="itemSize" format="dimension" />
+        <attr name="itemScale" format="float" />
+        <attr name="itemSelectedTint" format="color" />
+        <attr name="itemTint" format="color" />
+        <attr name="delimiterSize" format="dimension" />
+        <attr name="itemIcon" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="TicketView">
+        <attr name="ticketOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="ticketBackgroundColor" format="color" />
+        <attr name="ticketScallopRadius" format="dimension" />
+        <attr name="ticketScallopPositionPercent" format="float" />
+        <attr name="ticketShowBorder" format="boolean" />
+        <attr name="ticketBorderWidth" format="dimension" />
+        <attr name="ticketBorderColor" format="color" />
+        <attr name="ticketShowDivider" format="boolean" />
+        <attr name="ticketDividerWidth" format="dimension" />
+        <attr name="ticketDividerPadding" format="dimension" />
+        <attr name="ticketDividerColor" format="color" />
+        <attr name="ticketDividerType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="dash" value="1" />
+        </attr>
+        <attr name="ticketDividerDashGap" format="dimension" />
+        <attr name="ticketDividerDashLength" format="dimension" />
+        <attr name="ticketCornerType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="rounded" value="1" />
+            <enum name="scallop" value="2" />
+        </attr>
+        <attr name="ticketCornerRadius" format="dimension" />
+        <attr name="android:elevation" />
+        <attr name="ticketElevation" format="dimension" />
+        <attr name="ticketBackgroundBeforeDivider" format="reference" />
+        <attr name="ticketBackgroundAfterDivider" format="reference" />
+        <attr name="ticketShadowColor" format="color"/>
+    </declare-styleable>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_search_background_height">180dp</dimen>
+    <dimen name="activity_search_form_city_height">90dp</dimen>
+    <dimen name="activity_search_form_date_height">100dp</dimen>
+    <dimen name="activity_search_form_direction_height">50dp</dimen>
+    <dimen name="activity_search_form_location_height">100dp</dimen>
+    <dimen name="activity_search_form_passenger_height">50dp</dimen>
+    <dimen name="activity_search_margin_bottom">10dp</dimen>
+    <dimen name="activity_search_margin_left">16dp</dimen>
+    <dimen name="activity_search_margin_right">10dp</dimen>
+    <dimen name="activity_search_margin_top">200dp</dimen>
+    <dimen name="activity_search_text_city_code_size">24sp</dimen>
+    <dimen name="activity_search_text_code_size">48sp</dimen>
+    <dimen name="activity_search_text_date_size">36sp</dimen>
+    <dimen name="activity_search_text_header_size">18sp</dimen>
+    <dimen name="activity_search_text_size">16sp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="alert_width">290dp</dimen>
+    <dimen name="common_circle_width">3dp</dimen>
+    <dimen name="dateDividerSize">1dp</dimen>
+    <dimen name="dateTitlePaddingBottom">5dp</dimen>
+    <dimen name="dayOfMonthBoxSize">40dp</dimen>
+    <dimen name="dayOfMonthImageMarginTop">32dp</dimen>
+    <dimen name="dayOfMonthImageSize">4dp</dimen>
+    <dimen name="dayOfMonthMinHeight">0dp</dimen>
+    <dimen name="dayOfMonthMinWidth">40dp</dimen>
+    <dimen name="dayOfMonthPaddingBottom">0dp</dimen>
+    <dimen name="dayOfMonthSize">30dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp15">15dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="lazy_date_picker_height_focus">2.5dp</dimen>
+    <dimen name="lazy_date_picker_width_case">12dp</dimen>
+    <dimen name="lazy_date_picker_width_margin">1dp</dimen>
+    <dimen name="lazy_date_picker_width_space">6dp</dimen>
+    <dimen name="monthPaddingLeft">15dp</dimen>
+    <dimen name="monthPaddingRight">15dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_left">16dp</dimen>
+    <dimen name="nav_right">16dp</dimen>
+    <dimen name="progress_circle_radius">34dp</dimen>
+    <dimen name="selected_text_size">35dp</dimen>
+    <dimen name="strip_height">28dp</dimen>
+    <dimen name="text_size">30dp</dimen>
+    <dimen name="text_size_date">14sp</dimen>
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="text_size_week">15sp</dimen>
+    <dimen name="titleBarHeight">40dp</dimen>
+    <dimen name="weekDaysPaddingBottom">0dp</dimen>
+    <dimen name="weekRowMinHeight">40dp</dimen>
+    <item name="btn_last_month" type="id" />
+    <item name="btn_next_month" type="id" />
+    <item name="tv_day_of_month" type="id" />
+    <item name="tv_title" type="id" />
+    <string name="KAlert_cancel_button_text">Huỷ bỏ</string>
+    <string name="KAlert_confirm_button_text">Đồng ý</string>
+    <string name="LOADING">Loading…</string>
+    <string name="account_already_exists">Tài khoản đã tồn tại.</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">MyAarLibrary</string>
+    <string name="birthday_day">Ngày sinh</string>
+    <string name="birthday_month">Tháng sinh</string>
+    <string name="birthday_year">Năm sinh</string>
+    <string name="can_not_crop">Can not crop</string>
+    <string name="cdrp_fri">T6</string>
+    <string name="cdrp_mon">T2</string>
+    <string name="cdrp_sat">T7</string>
+    <string name="cdrp_sun">CN</string>
+    <string name="cdrp_thu">T5</string>
+    <string name="cdrp_tue">T3</string>
+    <string name="cdrp_wed">T4</string>
+    <string name="close">Đóng</string>
+    <string name="confirm_cancel">Hủy bỏ</string>
+    <string name="confirm_ok">Xác nhận</string>
+    <string name="copy">Copy</string>
+    <string name="crash_dialog_ok_toast">Thank you !</string>
+    <string name="crash_dialog_text">An unexpected error occurred forcing the
+        application to stop. Please help us fix this by sending us error data,
+        all you have to do is click \'OK\'.</string>
+    <string name="crash_dialog_title">Application has crashed</string>
+    <string name="crash_notif_text">Please click here to help fix the issue.</string>
+    <string name="crash_notif_ticker_text">Unexpected error, please send a report...</string>
+    <string name="crash_notif_title">Application has crashed...</string>
+    <string name="cube_ptr_hours_ago"> Giờ trước</string>
+    <string name="cube_ptr_last_update">Cập nhật lần cuối: </string>
+    <string name="cube_ptr_minutes_ago"> Phút trước</string>
+    <string name="cube_ptr_nomore">Không thể tải thêm.</string>
+    <string name="cube_ptr_pull_down">Kéo xuống để tải.</string>
+    <string name="cube_ptr_pull_down_to_refresh">Kéo xuống để làm mới.</string>
+    <string name="cube_ptr_refresh_complete">Hoàn tất.</string>
+    <string name="cube_ptr_refreshing">Đang tải...</string>
+    <string name="cube_ptr_release_to_refresh">Nhấp để làm mới.</string>
+    <string name="cube_ptr_seconds_ago"> Giây trước</string>
+    <string name="cube_ptr_showFail">Không thể tải thêm, nhấp để thử lại.</string>
+    <string name="day_title_today">today</string>
+    <string name="day_title_tomorrow">tomorrow</string>
+    <string name="day_title_yesterday">yesterday</string>
+    <string name="days_lbl">day</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_default_title">Dialog Title</string>
+    <string name="dialog_logout_message">Bạn có muốn đăng xuất kết thúc phiên làm việc?</string>
+    <string name="dialog_logout_title">Đăng xuất</string>
+    <string name="dialog_ok">OK</string>
+    <string name="done">Hoàn thành</string>
+    <string name="dongy">Đồng ý</string>
+    <string name="dummy_text">---</string>
+    <string name="error">Xảy ra lỗi trong quá trình đăng ký, xin hãy thử lại.</string>
+    <string name="error_account_not_active">Tài khoản đang bị khóa.</string>
+    <string name="error_account_wrong">Tài khoản hoặc mật khẩu không chính xác.</string>
+    <string name="error_connect_internet">Không thể kết nối mạng.</string>
+    <string name="error_connect_timeout">Lỗi thời gian kết nối quá lâu.</string>
+    <string name="error_internet_connection">Không thể kết nối mạng.</string>
+    <string name="error_other">Có lỗi xảy ra. Xin liên hệ với nhân viên hệ thống để được giúp đỡ.</string>
+    <string name="error_required">Thiếu dữ liệu</string>
+    <string name="facebook">Facebook</string>
+    <string name="facebook_app_id">1790478051262216</string>
+    <string name="fail_to_crop">Fail to crop</string>
+    <string name="font_family_black">sans-serif-black</string>
+    <string name="font_family_condensed">sans-serif-condensed</string>
+    <string name="font_family_light">sans-serif-light</string>
+    <string name="font_family_medium">sans-serif-medium</string>
+    <string name="font_family_regular">sans-serif</string>
+    <string name="font_family_thin">sans-serif-thin</string>
+    <string name="gender_labe">Chọn</string>
+    <string name="get_link">Get link</string>
+    <string name="gmail">Gmail</string>
+    <string name="google_plus">Google+</string>
+    <string name="gridview_with_loadmore">GridView With LoadMore</string>
+    <string name="hangout">Hangout</string>
+    <string name="hours_lbl">hour</string>
+    <string name="huybo">Huỷ bỏ</string>
+    <string name="lb_title_confirm_payment">Xác nhận thanh toán</string>
+    <string name="ldp_day">D</string>
+    <string name="ldp_month">M</string>
+    <string name="ldp_year">Y</string>
+    <string name="listView_with_loadmore">ListView with loadmore</string>
+    <string name="loading">Đang tải...</string>
+    <string name="logout_successfully">Đăng xuất tài khoản thành công.</string>
+    <string name="mail">Mail</string>
+    <string name="make_copy">Make a copy</string>
+    <string name="minutes_lbl">minute</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="ok">OK</string>
+    <string name="other">Khác</string>
+    <string name="preview">Preview</string>
+    <string name="product_category">Nhóm sản phẩm</string>
+    <string name="project_image_resource">ImageResource</string>
+    <string name="recyclerview_with_loadmore">Recyclerview with loadmore</string>
+    <string name="register_successfully">Đăng ký tài khoản thành công.</string>
+    <string name="registing">Đang đăng ký...</string>
+    <string name="seconds_lbl">second</string>
+    <string name="share">Share</string>
+    <string name="signin_successfully">Đăng nhập thành công.</string>
+    <string name="signing">Đang đăng nhập...</string>
+    <string name="swipe_listview_with_loadmore">SwipeRefreshLayout ListView With LoadMore</string>
+    <string name="title_a_minute_ago">a minute ago</string>
+    <string name="title_activity_base_fragment">BaseFragmentActivity</string>
+    <string name="title_an_days_ago"> days ago</string>
+    <string name="title_an_hour_ago">an hour ago</string>
+    <string name="title_an_hours_ago"> hours ago</string>
+    <string name="title_date_select_slideDateTimeDialog">Chọn ngày</string>
+    <string name="title_just_now">just now</string>
+    <string name="title_minutes_ago"> minutes ago</string>
+    <string name="title_time_select_slideDateTimeDialog">Chọn giờ</string>
+    <string name="try_againt">Thử lại</string>
+    <string name="tutorial_gotit">Đã hiểu</string>
+    <string name="twitter">Twitter</string>
+    <string name="txt_permission_location">Ứng dụng cần truy cập vị trí của bạn.</string>
+    <string name="type_money_vnd"> vnđ</string>
+    <string name="updateSuccess">Cập nhật thành công.</string>
+    <string name="update_failed">Cập nhật thông tin không thành công.</string>
+    <string name="update_success">Cập nhật thông tin thành công.</string>
+    <string name="updating">Đang cập nhật...</string>
+    <string name="upload">Upload</string>
+    <string name="user_not_exists">Người dùng không tồn tại.</string>
+    <string name="years_lbl">year</string>
+
+<!--    <style name="Animations_PopDownMenu_Center">-->
+<!--        <item name="android:windowEnterAnimation">@anim/grow_from_top</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/shrink_from_bottom</item>-->
+<!--    </style>-->
+
+<!--    <style name="Animations_PopDownMenu_Left">-->
+<!--        <item name="android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>-->
+<!--    </style>-->
+
+<!--    <style name="Animations_PopDownMenu_Right">-->
+<!--        <item name="android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>-->
+<!--    </style>-->
+
+<!--    <style name="Animations_PopUpMenu_Center">-->
+<!--        <item name="android:windowEnterAnimation">@anim/grow_from_bottom</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/shrink_from_top</item>-->
+<!--    </style>-->
+
+<!--    <style name="Animations_PopUpMenu_Left">-->
+<!--        <item name="android:windowEnterAnimation">@anim/grow_from_bottomleft_to_topright</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>-->
+<!--    </style>-->
+
+<!--    <style name="Animations_PopUpMenu_Right">-->
+<!--        <item name="android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>-->
+<!--    </style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppThemeSlideMenuLayout" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarStyle">@style/Support.ActionBar</item>
+    </style>
+
+    <style name="ContainerDayOfWeek">
+        <item name="android:layout_width">@dimen/dayOfMonthBoxSize</item>
+        <item name="android:layout_height">@dimen/dayOfMonthBoxSize</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="DayOfMonthStyle">
+        <item name="android:layout_width">@dimen/dayOfMonthSize</item>
+        <item name="android:layout_height">@dimen/dayOfMonthSize</item>
+        <item name="android:textSize">@dimen/text_size_date</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">@dimen/dayOfMonthMinHeight</item>
+        <item name="android:minWidth">@dimen/dayOfMonthMinWidth</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:paddingBottom">@dimen/dayOfMonthPaddingBottom</item>
+        <item name="android:textColor">@color/default_date_color</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog" />
+
+    <style name="StripRange">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/strip_height</item>
+        <item name="android:background">@color/range_bg_color</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="Support.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/fillColorNavigation</item>
+    </style>
+
+    <style name="WeekDayTitleStyle">
+        <item name="android:layout_width">@dimen/dayOfMonthBoxSize</item>
+        <item name="android:layout_height">@dimen/dayOfMonthBoxSize</item>
+        <item name="android:textSize">@dimen/text_size_week</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/date_color</item>
+        <item name="android:paddingBottom">@dimen/dayOfMonthPaddingBottom</item>
+    </style>
+
+    <style name="alert_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/float_transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <style name="dialog_button" parent="android:Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">31dp</item>
+<!--        <item name="android:background">@drawable/button_background</item>-->
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">21dp</item>
+        <item name="android:paddingRight">21dp</item>
+        <item name="android:textColor">@color/button_text_color</item>
+    </style>
+</resources>
