@@ -24,4 +24,12 @@
         app:ticketElevation="14dp"
         tools:ignore="MissingConstraints" />
 
+    <com.canhdinh.tcd.RoundRelativeLayout
+        app:rv_strokeColor="@color/colorPrimary"
+        app:rv_cornerRadius="@dimen/dp20"
+        app:rv_strokeWidth="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
