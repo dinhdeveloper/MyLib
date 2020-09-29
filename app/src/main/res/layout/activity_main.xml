@@ -31,6 +31,11 @@
         android:text="SnackAlert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/showConfilm"
+        android:text="showConfilm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <com.canhdinh.lib.loadingbutton.ButtonLoading
         android:id="@+id/loadingbutton"

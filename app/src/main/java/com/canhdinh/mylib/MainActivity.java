@@ -3,11 +3,16 @@ package com.canhdinh.mylib;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.canhdinh.lib.alert.AlertConfirm;
+import com.canhdinh.lib.alert.AlertDialog;
+import com.canhdinh.lib.alert.AlertLoading;
+import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.helper.MyToast;
 import com.canhdinh.lib.loadingbutton.ButtonLoading;
 import com.canhdinh.lib.snackalert.SnackAlert;
@@ -21,7 +26,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import static android.view.View.*;
+import static com.canhdinh.lib.alert.AlertDialog.SUCCESS_TYPE;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , DatePickerDialog.OnDateCancelListener{
     ButtonLoading buttonLoading;
@@ -36,7 +41,42 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         Button snackAlert = findViewById(R.id.snackAlert);
         Button set_date_button = findViewById(R.id.set_date_button);
         PinTextView pinview = findViewById(R.id.pinview);
+        Button showConfilm = findViewById(R.id.showConfilm);
 
+        showConfilm.setOnClickListener(v -> {
+
+
+
+//            AlertConfirm.showAlertConfirm(MainActivity.this,SUCCESS_TYPE ,"Xác nhận",
+//                    "Tạo sản phẩm thành công", "xác nhận","hủy bỏ", new AlertConfirm.ConfirmClickListener() {
+//                        @Override
+//                        public void setConfirmClickListener(AlertDialog dialog) {
+//                            dialog.dismissWithAnimation();
+//                            new SnackAlert(MainActivity.this).setTitle("Thành công")
+//                                    .setMessage("Thành công rồi").show();
+//                        }
+//
+//                        @Override
+//                        public void setCancelButton(AlertDialog dialog) {
+//                            dialog.dismissWithAnimation();
+//                        }
+//                    });
+
+            AlertConfirm.showAlertWarning(MainActivity.this, "Xác nhận", "Bạn chưa chọn gì đó?", new AlertConfirm.ConfirmClickListener() {
+                @Override
+                public void setConfirmClickListener(AlertDialog dialog) {
+                    dialog.dismissWithAnimation();
+                    new SnackAlert(MainActivity.this).setTitle("Chọn rồi")
+                            .setType(SnackAlert.WARNING)
+                            .setMessage("Thành công rồi").show();
+                }
+
+                @Override
+                public void setCancelButton(AlertDialog dialog) {
+                    dialog.dismissWithAnimation();
+                }
+            });
+        });
 
         simpleDateFormat = new SimpleDateFormat("dd MM yyyy", Locale.US);
         snackAlert.setOnClickListener(v -> new SnackAlert(MainActivity.this)
