@@ -1,27 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/dp20"
+    android:orientation="vertical"
+    android:id="@+id/root"
     tools:context=".MainActivity">
 
-    <com.canhdinh.tcd.TicketView
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/ticketView"
-        app:ticketOrientation="vertical"
-        app:ticketScallopRadius="10dp"
-        app:ticketShowBorder="false"
-        app:ticketScallopPositionPercent="50"
-        app:ticketShowDivider="true"
-        app:ticketDividerType="dash"
-        app:ticketDividerPadding="0dp"
-        app:ticketElevation="14dp"
-        tools:ignore="MissingConstraints" />
+<!--    <com.canhdinh.tcd.ticketview.TicketView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="160dp"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:id="@+id/ticketView"-->
+<!--        app:ticketOrientation="vertical"-->
+<!--        app:ticketScallopRadius="10dp"-->
+<!--        app:ticketShowBorder="false"-->
+<!--        app:ticketScallopPositionPercent="50"-->
+<!--        app:ticketShowDivider="true"-->
+<!--        app:ticketDividerType="dash"-->
+<!--        app:ticketDividerPadding="0dp"-->
+<!--        app:ticketElevation="14dp"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/snackAlert"
+        android:text="SnackAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.canhdinh.lib.loadingbutton.ButtonLoading
+        android:id="@+id/loadingbutton"
+        android:layout_width="223dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        app:BL_backgroundColor="#9c9b9999"
+        app:BL_circleColor="#00AFEF"
+        app:BL_circleColorSecond="#8000AFEF"
+        app:BL_enable="true"
+        app:BL_stateShow="normal"
+        app:BL_text="Login"
+        app:BL_textColor="#ffffff"
+        app:BL_textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.539" />
+
+    <Button
+        android:id="@+id/set_date_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set date"/>
+
+    <com.canhdinh.lib.textview.PinTextView
+        android:id="@+id/pinview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:inputType="text"
+        app:pinHeight="40dp"
+        app:pinLength="4"
+        app:pinWidth="40dp"/>
+
+</LinearLayout>
