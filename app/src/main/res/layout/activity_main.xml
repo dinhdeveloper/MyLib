@@ -80,4 +80,11 @@
         app:pinLength="4"
         app:pinWidth="40dp"/>
 
+    <com.canhdinh.lib.togglebutton.SwitchButton
+        android:id="@+id/switch_button"
+        app:sb_background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
 </LinearLayout>

@@ -20,6 +20,7 @@ import com.canhdinh.lib.spinnerdatepicker.DatePicker;
 import com.canhdinh.lib.spinnerdatepicker.DatePickerDialog;
 import com.canhdinh.lib.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
 import com.canhdinh.lib.textview.PinTextView;
+import com.canhdinh.lib.togglebutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     LinearLayout root;
     SimpleDateFormat simpleDateFormat;
     PinTextView pinview;
+    SwitchButton switchButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +44,23 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         Button set_date_button = findViewById(R.id.set_date_button);
         PinTextView pinview = findViewById(R.id.pinview);
         Button showConfilm = findViewById(R.id.showConfilm);
+        switchButton = findViewById(R.id.switch_button);
 
         showConfilm.setOnClickListener(v -> {
+
+            switchButton.setChecked(true);
+            switchButton.isChecked();
+            switchButton.toggle();     //switch state
+            switchButton.toggle(false);//switch without animation
+            switchButton.setShadowEffect(true);//disable shadow effect
+            switchButton.setEnabled(false);//disable button
+            switchButton.setEnableEffect(false);//disable the switch animation
+            switchButton.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+                    //TODO do your job
+                }
+            });
 
 
 
