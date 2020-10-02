@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="customPickerStyle" format="reference" />
+    <attr name="rv_backgroundColor" format="color" />
+    <attr name="rv_backgroundPressColor" format="color" />
+    <attr name="rv_radius" format="dimension" />
+    <attr name="rv_radius_bottom_left" format="dimension" />
+    <attr name="rv_radius_bottom_right" format="dimension" />
+    <attr name="rv_radius_top_left" format="dimension" />
+    <attr name="rv_radius_top_right" format="dimension" />
+    <attr name="rv_radius_half_height" format="boolean" />
+    <attr name="rv_isRippleEnable" format="boolean" />
+    <attr name="rv_isWidthHeightEqual" format="boolean" />
+    <attr name="rv_strokeColor" format="color" />
+    <attr name="rv_strokePressColor" format="color" />
+    <attr name="rv_strokeWidth" format="dimension" />
+    <attr name="rv_textPressColor" format="color" />
+    <attr name="rv_underlineThickness" format="dimension" />
+
+    <declare-styleable name="BirthdayInput">
+        <attr name="ldp_text_color" format="color" />
+        <attr name="ldp_hint_color" format="color" />
+        <attr name="ldp_date_format">
+            <flag name="mm-dd-yyyy" value="1" />
+            <flag name="dd-mm-yyyy" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CalendarView">
+        <attr name="titleColor" format="color" />
+        <attr name="titleLayout" format="reference" />
+        <attr name="weekColor" format="color" />
+        <attr name="weekBackground" format="color|reference" />
+        <attr name="monthBackground" format="color|reference" />
+        <attr name="dateDividerColor" format="color" />
+        <attr name="dateDividerSize" format="dimension" />
+        <attr name="imgLastMonth" format="reference" />
+        <attr name="imgNextMonth" format="reference" />
+        <attr name="monthValue" format="string" />
+        <attr name="language">
+            <enum name="china" value="1" />
+            <enum name="english" value="2" />
+            <enum name="vi" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CircularImageView">
+        <attr name="border" format="boolean" />
+        <attr name="border_color" format="color" />
+        <attr name="border_width" format="dimension" />
+        <attr name="selector" format="boolean" />
+        <attr name="selector_color" format="color" />
+        <attr name="selector_stroke_color" format="color" />
+        <attr name="selector_stroke_width" format="dimension" />
+        <attr name="shadow" format="boolean" />
+        <attr name="civ_shadowRadius" format="float" />
+        <attr name="civ_shadowDx" format="float" />
+        <attr name="civ_shadowDy" format="float" />
+        <attr name="civ_shadowColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CurrencyEditText">
+        <attr name="TextAlignment" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CustomButton">
+        <attr name="cb_backgroundColor" format="color" />
+        <attr name="cb_radius" format="integer" />
+        <attr name="cb_strokeColor" format="color" />
+        <attr name="cb_strokeWidth" format="integer" />
+        <attr name="cb_strokeDashWidth" format="integer" />
+        <attr name="cb_strokeDashGap" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CustomCircularImageViewTheme">
+        <attr name="circularImageViewStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CustomProgressBar">
+        <attr name="foreground_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CustomTabButton">
+        <attr name="full_width" format="boolean" />
+        <attr name="tab_width" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="DateRangeMonthView">
+        <attr name="title_color" format="color" />
+        <attr name="week_color" format="color" />
+        <attr name="range_color" format="color" />
+        <attr name="selected_date_circle_color" format="color" />
+        <attr name="selected_date_color" format="color" />
+        <attr name="default_date_color" format="color" />
+        <attr name="range_date_color" format="color" />
+        <attr name="disable_date_color" format="color" />
+        <attr name="text_size_title" format="dimension" />
+        <attr name="text_size_week" format="dimension" />
+        <attr name="text_size_date" format="dimension" />
+        <attr name="header_bg" format="integer" />
+        <attr name="calendar_tag" format="string" />
+        <attr name="week_offset" format="integer" />
+        <attr name="editable" format="boolean" />
+        <attr name="swipeable" format="boolean" />
+        <attr name="show_header" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="GraphViewXML">
+        <attr name="seriesData" format="string" />
+        <attr name="seriesType" format="string" />
+        <attr name="seriesTitle" format="string" />
+        <attr name="android:title" />
+        <attr name="seriesColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ImageCropView">
+        <attr name="gridInnerStroke" format="dimension" />
+        <attr name="gridInnerColor" format="color" />
+        <attr name="setInnerGridMode" format="integer">
+            <enum name="off" value="0" />
+            <enum name="on" value="1" />
+        </attr>
+        <attr name="gridOuterStroke" format="dimension" />
+        <attr name="gridOuterColor" format="color" />
+        <attr name="setOuterGridMode" format="integer">
+            <enum name="off" value="0" />
+            <enum name="on" value="1" />
+        </attr>
+        <attr name="gridLeftRightMargin" format="dimension" />
+        <attr name="gridTopBottomMargin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MKLoader">
+        <attr name="mk_color" format="color" />
+        <attr name="mk_type">
+            <enum name="ClassicSpinner" value="0" />
+            <enum name="FishSpinner" value="1" />
+            <enum name="LineSpinner" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MyCustomPicker">
+        <attr name="cp_width" format="dimension" />
+        <attr name="cp_height" format="dimension" />
+        <attr name="cp_accessibilityDescriptionEnabled" format="boolean" />
+        <attr name="cp_divider" format="reference" />
+        <attr name="cp_dividerColor" format="color" />
+        <attr name="cp_dividerDistance" format="dimension" />
+        <attr name="cp_dividerThickness" format="dimension" />
+        <attr name="cp_fadingEdgeEnabled" format="boolean" />
+        <attr name="cp_fadingEdgeStrength" format="float" />
+        <attr name="cp_formatter" format="string" />
+        <attr name="cp_hideWheelUntilFocused" format="boolean" />
+        <attr name="cp_lineSpacingMultiplier" format="float" />
+        <attr name="cp_max" format="integer" />
+        <attr name="cp_maxFlingVelocityCoefficient" format="integer" />
+        <attr name="cp_min" format="integer" />
+        <attr name="cp_order" format="enum">
+            <enum name="ascending" value="0" />
+            <enum name="descending" value="1" />
+        </attr>
+        <attr name="cp_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="cp_scrollerEnabled" format="boolean" />
+        <attr name="cp_selectedTextAlign" format="enum">
+            <enum name="selectedTextAlignRight" value="0" />
+            <enum name="selectedTextAlignCenter" value="1" />
+            <enum name="selectedTextAlignLeft" value="2" />
+        </attr>
+        <attr name="cp_selectedTextColor" format="color" />
+        <attr name="cp_selectedTextSize" format="dimension" />
+        <attr name="cp_selectedTextStrikeThru" format="boolean" />
+        <attr name="cp_selectedTextUnderline" format="boolean" />
+        <attr name="cp_selectedTypeface" format="string" />
+        <attr name="cp_textAlign" format="enum">
+            <enum name="textAlignRight" value="0" />
+            <enum name="textAlignCenter" value="1" />
+            <enum name="textAlignLeft" value="2" />
+        </attr>
+        <attr name="cp_textColor" format="color" />
+        <attr name="cp_textSize" format="dimension" />
+        <attr name="cp_textStrikeThru" format="boolean" />
+        <attr name="cp_textUnderline" format="boolean" />
+        <attr name="cp_typeface" format="string" />
+        <attr name="cp_value" format="integer" />
+        <attr name="cp_wheelItemCount" format="integer" />
+        <attr name="cp_wrapSelectorWheel" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="PtrClassicHeader">
+        <attr name="ptr_rotate_ani_time" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="PtrFrameLayout">
+        <attr name="ptr_header" format="reference" />
+        <attr name="ptr_content" format="reference" />
+        <attr name="ptr_resistance" format="float" />
+        <attr name="ptr_ratio_of_header_height_to_refresh" format="float" />
+        <attr name="ptr_duration_to_close" format="integer" />
+        <attr name="ptr_duration_to_close_header" format="integer" />
+        <attr name="ptr_pull_to_fresh" format="boolean" />
+        <attr name="ptr_keep_header_when_refresh" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="Rotate3dAnimation">
+        <attr name="rollType" format="enum">
+            <enum name="x" value="0" />
+            <enum name="y" value="1" />
+            <enum name="z" value="2" />
+        </attr>
+        <attr name="fromDeg" format="float" />
+        <attr name="toDeg" format="float" />
+        <attr name="pivotX" format="fraction" />
+        <attr name="pivotY" format="fraction" />
+    </declare-styleable>
+    <declare-styleable name="RoundFrameLayout">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_radius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_radius_half_height" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_radius_top_left" />
+        <attr name="rv_radius_top_right" />
+        <attr name="rv_radius_bottom_left" />
+        <attr name="rv_radius_bottom_right" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="RoundLinearLayout">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_radius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_radius_half_height" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_radius_top_left" />
+        <attr name="rv_radius_top_right" />
+        <attr name="rv_radius_bottom_left" />
+        <attr name="rv_radius_bottom_right" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="RoundRelativeLayout">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_radius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_radius_half_height" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_radius_top_left" />
+        <attr name="rv_radius_top_right" />
+        <attr name="rv_radius_bottom_left" />
+        <attr name="rv_radius_bottom_right" />
+        <attr name="rv_isRippleEnable" />
+    </declare-styleable>
+    <declare-styleable name="RoundTextView">
+        <attr name="rv_backgroundColor" />
+        <attr name="rv_backgroundPressColor" />
+        <attr name="rv_radius" />
+        <attr name="rv_strokeWidth" />
+        <attr name="rv_strokeColor" />
+        <attr name="rv_strokePressColor" />
+        <attr name="rv_textPressColor" />
+        <attr name="rv_radius_half_height" />
+        <attr name="rv_isWidthHeightEqual" />
+        <attr name="rv_radius_top_left" />
+        <attr name="rv_radius_top_right" />
+        <attr name="rv_radius_bottom_left" />
+        <attr name="rv_radius_bottom_right" />
+        <attr name="rv_isRippleEnable" />
+        <attr name="rv_underlineThickness" />
+    </declare-styleable>
+    <declare-styleable name="SlideMenuLayout">
+        <attr name="slideMode" format="enum">
+            <enum name="left" value="1001" />
+            <enum name="right" value="1002" />
+            <enum name="both" value="1003" />
+            <enum name="none" value="1004" />
+        </attr>
+        <attr name="slidePadding" format="dimension" />
+        <attr name="slideTime" format="integer" />
+        <attr name="parallax" format="boolean" />
+        <attr name="contentAlpha" format="float" />
+        <attr name="contentShadowColor" format="color" />
+        <attr name="contentToggle" format="boolean" />
+        <attr name="allowDragging" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="itemSize" format="dimension" />
+        <attr name="itemScale" format="float" />
+        <attr name="itemSelectedTint" format="color" />
+        <attr name="itemTint" format="color" />
+        <attr name="delimiterSize" format="dimension" />
+        <attr name="itemIcon" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="TicketView">
+        <attr name="ticketOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="ticketBackgroundColor" format="color" />
+        <attr name="ticketScallopRadius" format="dimension" />
+        <attr name="ticketScallopPositionPercent" format="float" />
+        <attr name="ticketShowBorder" format="boolean" />
+        <attr name="ticketBorderWidth" format="dimension" />
+        <attr name="ticketBorderColor" format="color" />
+        <attr name="ticketShowDivider" format="boolean" />
+        <attr name="ticketDividerWidth" format="dimension" />
+        <attr name="ticketDividerPadding" format="dimension" />
+        <attr name="ticketDividerColor" format="color" />
+        <attr name="ticketDividerType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="dash" value="1" />
+        </attr>
+        <attr name="ticketDividerDashGap" format="dimension" />
+        <attr name="ticketDividerDashLength" format="dimension" />
+        <attr name="ticketCornerType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="rounded" value="1" />
+            <enum name="scallop" value="2" />
+        </attr>
+        <attr name="ticketCornerRadius" format="dimension" />
+        <attr name="android:elevation" />
+        <attr name="ticketElevation" format="dimension" />
+        <attr name="ticketBackgroundBeforeDivider" format="reference" />
+        <attr name="ticketBackgroundAfterDivider" format="reference" />
+        <attr name="ticketShadowColor" format="color" />
+    </declare-styleable>
+    <!--LoadingButton-->
+    <declare-styleable name="ButtonLoading">
+
+        <attr name="BL_enable" format="boolean" />
+        <attr name="BL_idParent" format="integer" />
+        <attr name="BL_font" format="string" />
+        <attr name="BL_text" format="string" />
+        <attr name="BL_textColor" format="color" />
+        <attr name="BL_textDisableColor" format="color" />
+        <attr name="BL_backgroundColor" format="color" />
+        <attr name="BL_circleColor" format="color" />
+        <attr name="BL_circleColorSecond" format="color" />
+        <attr name="BL_backgroundDisableColor" format="color" />
+        <attr name="BL_textSize" format="dimension" />
+        <attr name="BL_stateShow" format="integer">
+            <enum name="normal" value="1" />
+            <enum name="animationStart" value="2" />
+            <enum name="progress" value="3" />
+            <enum name="animationFinish" value="4" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="TransitionImageView">
+        <!-- Amount of rounding to apply. Assign `0f`
+             to have to no rounding at all.
+             Use `1f` to have perfectly rounded edges.
+             Values in-between will be interpolated. -->
+        <attr name="tiv_rounding" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeRevealLayout">
+        <attr name="dragEdge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+        <attr name="mode">
+            <enum name="normal" value="0" />
+            <enum name="same_level" value="1" />
+        </attr>
+        <attr name="flingVelocity" format="integer" />
+        <attr name="minDistRequestDisallowParent" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="Pinview">
+        <attr name="pinBackground" format="reference"/>
+        <attr name="pinLength" format="integer"/>
+        <attr name="pinWidth" format="dimension"/>
+        <attr name="pinHeight" format="dimension"/>
+        <attr name="splitWidth" format="dimension"/>
+        <attr name="cursorVisible" format="boolean"/>
+        <attr name="password" format="boolean"/>
+        <attr name="forceKeyboard" format ="boolean"/>
+        <attr name="hint" format="string"/>
+        <attr name="inputType"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+    <attr name="inputType" format="enum">
+        <enum name="text" value="0"/>
+        <enum name="number" value="1"/>
+    </attr>
+</resources>
