@@ -120,4 +120,7 @@
     <color name="white_opacity">#DCffffff</color>
     <color name="windowBackground">#FFFFFF</color>
 
+    <color name="searchDialogResultColor">@android:color/secondary_text_light</color>
+    <color name="searchDialogResultHighlightColor">#FFED2E47</color>
+
 </resources>

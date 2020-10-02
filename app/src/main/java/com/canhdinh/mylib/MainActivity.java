@@ -2,9 +2,14 @@ package com.canhdinh.mylib;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -13,6 +18,7 @@ import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
 import com.canhdinh.lib.alert.AlertLoading;
 import com.canhdinh.lib.alert.AlertSuccess;
+import com.canhdinh.lib.edittext.FormattedEditText;
 import com.canhdinh.lib.helper.MyToast;
 import com.canhdinh.lib.loadingbutton.ButtonLoading;
 import com.canhdinh.lib.snackalert.SnackAlert;
@@ -23,18 +29,24 @@ import com.canhdinh.lib.textview.PinTextView;
 import com.canhdinh.lib.togglebutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 
 import static com.canhdinh.lib.alert.AlertDialog.SUCCESS_TYPE;
 
-public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , DatePickerDialog.OnDateCancelListener{
+public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, DatePickerDialog.OnDateCancelListener {
     ButtonLoading buttonLoading;
     LinearLayout root;
     SimpleDateFormat simpleDateFormat;
     PinTextView pinview;
     SwitchButton switchButton;
+    RecyclerView recyclerView;
+    Button search;
+    FormattedEditText formattedEditText_simple, formattedEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         PinTextView pinview = findViewById(R.id.pinview);
         Button showConfilm = findViewById(R.id.showConfilm);
         switchButton = findViewById(R.id.switch_button);
+        formattedEditText_simple = findViewById(R.id.formattedEditText_simple);
+        formattedEditText = findViewById(R.id.formattedEditText);
+        recyclerView = findViewById(R.id.recyclerView);
+        search = findViewById(R.id.search);
 
         showConfilm.setOnClickListener(v -> {
 
@@ -61,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     //TODO do your job
                 }
             });
-
 
 
 //            AlertConfirm.showAlertConfirm(MainActivity.this,SUCCESS_TYPE ,"Xác nhận",
@@ -106,32 +121,69 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
 
         pinview.setPinViewEventListener((pinview1, fromUser) -> {
-            MyToast.show(MainActivity.this,pinview1.getValue());
+            MyToast.show(MainActivity.this, pinview1.getValue());
         });
 
-        root=findViewById(R.id.root);
-        buttonLoading=findViewById(R.id.loadingbutton);
-        buttonLoading.setRoot(buttonLoading,this,root);
+        root = findViewById(R.id.root);
+        buttonLoading = findViewById(R.id.loadingbutton);
+        buttonLoading.setRoot(buttonLoading, this, root);
         buttonLoading.setOnButtonLoadingListener(new ButtonLoading.OnButtonLoadingListener() {
             @Override
             public void onClick() {
-                //...
+                MyToast.show(getApplicationContext(), "onClick");
             }
 
             @Override
             public void onStart() {
-
-                //...
+                MyToast.show(getApplicationContext(), "onStart");
             }
 
             @Override
             public void onFinish() {
-                //...
-
+                MyToast.show(getApplicationContext(), "onFinish");
             }
         });
 
+
+        formattedEditText_simple.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                MyToast.show(MainActivity.this, formattedEditText_simple.getRealText());
+            }
+        });
+
+        formattedEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                MyToast.show(MainActivity.this, formattedEditText.getRealText());
+            }
+        });
+
+        search.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, SearchActivity.class));
+        });
     }
+
     @Override
     public void onBackPressed() {
 
@@ -141,13 +193,14 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
         Calendar calendar = new GregorianCalendar(year, monthOfYear, dayOfMonth);
-        MyToast.show(MainActivity.this,simpleDateFormat.format(calendar.getTime()));
+        MyToast.show(MainActivity.this, simpleDateFormat.format(calendar.getTime()));
     }
 
     @Override
     public void onCancelled(DatePicker view) {
         //TODO hủy kết quả, xóa ngày
     }
+
     @VisibleForTesting
     void showDate(int year, int monthOfYear, int dayOfMonth, int spinnerTheme) {
         new SpinnerDatePickerDialogBuilder()
@@ -159,4 +212,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 .build()
                 .show();
     }
+
+
 }
