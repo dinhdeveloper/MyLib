@@ -2,17 +2,21 @@ package com.canhdinh.mylib;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.canhdinh.lib.helper.MyToast;
+import com.canhdinh.lib.rippleview.RippleView;
 import com.canhdinh.lib.searchdialog.SimpleSearchDialogCompat;
 import com.canhdinh.lib.searchdialog.core.BaseFilter;
 import com.canhdinh.lib.searchdialog.core.BaseSearchDialogCompat;
 import com.canhdinh.lib.searchdialog.core.FilterResultListener;
 import com.canhdinh.lib.searchdialog.core.SearchResultListener;
 import com.canhdinh.lib.searchdialog.core.Searchable;
+import com.canhdinh.lib.widget.WaveSwipeRefreshLayout;
 import com.canhdinh.mylib.api.APIService;
 import com.canhdinh.mylib.api.APIUntil;
 import com.canhdinh.mylib.model.Product;
@@ -25,9 +29,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements WaveSwipeRefreshLayout.OnRefreshListener {
 
     APIService apiService;
+    private WaveSwipeRefreshLayout mWaveSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,16 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         apiService = APIUntil.getServer();
         provideSimpleDialogWithApiCalls();
+
+        final RippleView rippleView = (RippleView) findViewById(R.id.rect);
+        mWaveSwipeRefreshLayout = (WaveSwipeRefreshLayout) findViewById(R.id.main_swipe);
+        mWaveSwipeRefreshLayout.setColorSchemeColors(Color.WHITE, Color.WHITE);
+        mWaveSwipeRefreshLayout.setOnRefreshListener(this);
+        mWaveSwipeRefreshLayout.setWaveColor(Color.argb(100, 255, 0, 0));
+
+        rippleView.setOnRippleCompleteListener(rippleView1 -> {
+            MyToast.show(SearchActivity.this, "ok");
+        });
     }
 
     private void getDataApi() {
@@ -136,5 +151,19 @@ public class SearchActivity extends AppCompatActivity {
         };
         searchDialog.setFilter(apiFilter);
         searchDialog.show();
+    }
+
+    @Override
+    public void onRefresh() {
+        refresh();
+    }
+
+    private void refresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mWaveSwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 3000);
     }
 }

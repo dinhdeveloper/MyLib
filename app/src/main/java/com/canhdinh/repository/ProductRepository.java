@@ -24,7 +24,7 @@ public class ProductRepository {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
-                    data.setValue(response.body());
+                    data.postValue(response.body());
                 }
             }
 
