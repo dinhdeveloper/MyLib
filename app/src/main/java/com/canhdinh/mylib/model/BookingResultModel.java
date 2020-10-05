@@ -16,4 +16,7 @@ public class BookingResultModel extends BaseResponseModel  {
         return image_upload;
     }
 
+    public void setImage_upload(String image_upload) {
+        this.image_upload = image_upload;
+    }
 }
