@@ -7,6 +7,8 @@ import com.canhdinh.mylib.model.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -28,6 +30,9 @@ public interface APIService {
     Call<List<Product>> searchProduct(@Path("search") String search);
 
     @Headers("Authorization:Basic YWRtaW46cXRjdGVrQDEyMwx==")
+    @Multipart
     @POST("/api")
-    Call<BaseResponseModel> updateImage(@Body BookingResultModel model, @Part("detect") String detect, @Part("type_manager") String type_manager);
+    Call<RequestBody> updateImage(
+            @Body RequestBody model
+    );
 }

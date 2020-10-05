@@ -59,38 +59,38 @@ public class SelectImageActivity extends AppCompatActivity implements BSImagePic
         });
 
         btnSubmit.setOnClickListener(view -> {
-//            MultipartBody.Builder builder = new MultipartBody.Builder();
-//            if (!TextUtils.isEmpty(payment_image)) {
-//                File fileAvatar = new File(payment_image);
-//                if (fileAvatar.exists()) {
-//                    RequestBody fileBody = RequestBody.create(MediaType.parse("image/*"), fileAvatar);
-//                    builder.addFormDataPart("payment_image", fileAvatar.getName(), fileBody);
-//                }
-//            }
-//            if (!TextUtils.isEmpty("74")) {
-//                builder.addFormDataPart("id_booking", "74");
-//            }
-//            builder.addFormDataPart("type_manager", "update_result_payment");
-//            builder.addFormDataPart("detect", "booking_manager")
-//                    .setType(MultipartBody.FORM);
-//
-//            RequestBody requestBody = builder.build();
+            MultipartBody.Builder builder = new MultipartBody.Builder();
+            if (!TextUtils.isEmpty(payment_image)) {
+                File fileAvatar = new File(payment_image);
+                if (fileAvatar.exists()) {
+                    RequestBody fileBody = RequestBody.create(MediaType.parse("image/*"), fileAvatar);
+                    builder.addFormDataPart("payment_image", fileAvatar.getName(), fileBody);
+                }
+            }
+            if (!TextUtils.isEmpty("74")) {
+                builder.addFormDataPart("id_booking", "74");
+            }
+            builder.addFormDataPart("type_manager", "update_result_payment");
+            builder.addFormDataPart("detect", "booking_manager")
+                    .setType(MultipartBody.FORM);
+
+            RequestBody requestBody = builder.build();
 
             BookingResultModel model = new BookingResultModel();
             model.setId("87");
             model.setImage_upload(payment_image);
 
-            apiService.updateImage(model,"booking_manager","update_result_payment").enqueue(new Callback<BaseResponseModel>() {
+            apiService.updateImage(requestBody).enqueue(new Callback<RequestBody>() {
                 @Override
-                public void onResponse(Call<BaseResponseModel> call, Response<BaseResponseModel> response) {
+                public void onResponse(Call<RequestBody> call, Response<RequestBody> response) {
                     if (response.isSuccessful()){
-                        Toast.makeText(SelectImageActivity.this, ""+response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SelectImageActivity.this, ""+response.message(), Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<BaseResponseModel> call, Throwable t) {
-                    Log.e("onFailure",t.getMessage());
+                public void onFailure(Call<RequestBody> call, Throwable t) {
+                    MyLog.LogError("onFailure",t.getMessage());
                 }
             });
         });
