@@ -20,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public abstract class ApiRequest <S, T, P> {
+public abstract class ApiRequest<S, T, P> {
     protected static final String TYPE_JSON_UTF8 = "application/json";
     protected static final String CONTENT_TYPE_JSON = "Content-Type: " + TYPE_JSON_UTF8;
     protected static final String REST_ENDPOINT = "get_api/?detect=1";

@@ -2,8 +2,6 @@ package com.canhdinh.helper;
 
 import com.canhdinh.api.ApiManagement;
 
-import okhttp3.Interceptor;
-
 public class AppProvider {
     private static ObjectProviderInterface instance;
 
@@ -46,7 +44,7 @@ public class AppProvider {
         return instance.getLanguageHelper();
     }
 
-    public static Interceptor getAuthHelper()
+    public static AuthHelper getAuthHelper()
     {
         return instance.getAuthHelper();
     }

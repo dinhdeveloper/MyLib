@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.canhdinh.AppProvider;
+import com.canhdinh.ObjectProviderInterface;
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
 import com.canhdinh.lib.alert.AlertLoading;
@@ -49,9 +51,11 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        ObjectProviderInterface objectProviderInterface = new AppObjectProvider(this);
+//        AppProvider.init(objectProviderInterface);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Button snackAlert = findViewById(R.id.snackAlert);
         Button set_date_button = findViewById(R.id.set_date_button);
         PinTextView pinview = findViewById(R.id.pinview);

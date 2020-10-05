@@ -2,8 +2,6 @@ package com.canhdinh.helper;
 
 import com.canhdinh.api.ApiManagement;
 
-import okhttp3.Interceptor;
-
 public interface ObjectProviderInterface {
     ImageHelper getImageHelper();
 
@@ -19,5 +17,5 @@ public interface ObjectProviderInterface {
 
     LanguageHelper getLanguageHelper();
 
-    Interceptor getAuthHelper();
+    AuthHelper getAuthHelper();
 }

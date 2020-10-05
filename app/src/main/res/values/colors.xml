@@ -4,4 +4,13 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="background">#40000000</color>
+
+    <!--admin-->
+    <color name="color_orange">#FF5722</color>
+    <color name="color_text_admin">#10ABFE</color>
+    <color name="color_bg_admin">#F2F2F2</color>
+    <color name="color_text_one">#8E8E93</color>
+    <color name="color_text_info">#889DFC</color>
+    <color name="color_disible">#D8D8D8</color>
+    <color name="color_view">#40000000</color>
 </resources>
