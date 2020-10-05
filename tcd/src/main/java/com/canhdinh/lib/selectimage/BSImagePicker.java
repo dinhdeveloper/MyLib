@@ -49,6 +49,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+//https://github.com/siralam/BSImagePicker?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=6925
+
 import static android.app.Activity.RESULT_OK;
 
 /**
