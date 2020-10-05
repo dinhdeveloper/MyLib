@@ -1,4 +1,4 @@
-package com.canhdinh;
+package com.canhdinh.mylib;
 
 import com.canhdinh.api.ApiManagement;
 import com.canhdinh.helper.AppCleanerHelper;
@@ -8,7 +8,6 @@ import com.canhdinh.helper.FileHelper;
 import com.canhdinh.helper.ImageHelper;
 import com.canhdinh.helper.InstallationHelper;
 import com.canhdinh.helper.LanguageHelper;
-import com.canhdinh.mylib.SharePrefs;
 
 public class AppProvider  {
     private static ObjectProviderInterface instance;

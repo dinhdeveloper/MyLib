@@ -1,4 +1,4 @@
-package com.canhdinh;
+package com.canhdinh.mylib;
 
 import com.canhdinh.api.ApiManagement;
 import com.canhdinh.helper.AppCleanerHelper;

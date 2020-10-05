@@ -2,8 +2,6 @@ package com.canhdinh.mylib;
 
 import android.content.Context;
 
-import com.canhdinh.AppProvider;
-import com.canhdinh.ObjectProviderInterface;
 import com.canhdinh.api.ApiManagement;
 import com.canhdinh.helper.AppCleanerHelper;
 import com.canhdinh.helper.AuthHelper;

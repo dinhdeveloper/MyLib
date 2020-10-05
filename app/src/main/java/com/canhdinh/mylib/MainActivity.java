@@ -2,24 +2,17 @@ package com.canhdinh.mylib;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.canhdinh.AppProvider;
-import com.canhdinh.ObjectProviderInterface;
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
-import com.canhdinh.lib.alert.AlertLoading;
-import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.edittext.FormattedEditText;
 import com.canhdinh.lib.helper.MyToast;
 import com.canhdinh.lib.loadingbutton.ButtonLoading;
@@ -31,13 +24,9 @@ import com.canhdinh.lib.textview.PinTextView;
 import com.canhdinh.lib.togglebutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Locale;
-
-import static com.canhdinh.lib.alert.AlertDialog.SUCCESS_TYPE;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, DatePickerDialog.OnDateCancelListener {
     ButtonLoading buttonLoading;
@@ -51,9 +40,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        ObjectProviderInterface objectProviderInterface = new AppObjectProvider(this);
-//        AppProvider.init(objectProviderInterface);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button snackAlert = findViewById(R.id.snackAlert);
