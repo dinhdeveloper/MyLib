@@ -124,4 +124,8 @@
     <color name="searchDialogResultColor">@android:color/secondary_text_light</color>
     <color name="searchDialogResultHighlightColor">#FFED2E47</color>
 
+    <color name="black50">#80000000</color>
+    <color name="primary_text">#212121</color>
+    <color name="multiselect_done">#388e3c</color>
+    <color name="error_text">#b71c1c</color>
 </resources>

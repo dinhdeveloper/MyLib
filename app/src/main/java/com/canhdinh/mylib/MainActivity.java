@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     PinTextView pinview;
     SwitchButton switchButton;
     RecyclerView recyclerView;
-    Button search;
+    Button search,select_image;
     FormattedEditText formattedEditText_simple, formattedEditText;
 
     @Override
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         formattedEditText = findViewById(R.id.formattedEditText);
         recyclerView = findViewById(R.id.recyclerView);
         search = findViewById(R.id.search);
+        select_image = findViewById(R.id.select_image);
 
         showConfilm.setOnClickListener(v -> {
 
@@ -181,6 +182,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         search.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SearchActivity.class));
+        });
+        select_image.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, SelectImageActivity.class));
         });
     }
 
