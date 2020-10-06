@@ -12,13 +12,14 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.canhdinh.api.ApiRequest;
 import com.canhdinh.api.ErrorApiResponse;
-import com.canhdinh.helper.AppProvider;
-import com.canhdinh.lib.helper.MyLog;
+import com.canhdinh.lib.alert.AlertError;
+import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.roundview.RoundTextView;
 import com.canhdinh.lib.selectimage.BSImagePicker;
 import com.canhdinh.mylib.api.APIService;
 import com.canhdinh.mylib.api.APIUntil;
 import com.canhdinh.mylib.api.RequestUpdateResultPayment;
+import com.canhdinh.mylib.api.ServiceGenerator;
 import com.canhdinh.mylib.model.BaseResponseModel;
 import com.canhdinh.mylib.model.BookingResultModel;
 
@@ -71,11 +72,16 @@ public class SelectImageActivity extends AppCompatActivity implements BSImagePic
                     .setType(MultipartBody.FORM);
             RequestBody requestBody = builder.build();
 
-            apiService.updateImage(requestBody).enqueue(new Callback<BaseResponseModel<BookingResultModel>>() {
+            APIService api = ServiceGenerator.createService(APIService.class);
+
+            api.updateImage(requestBody).enqueue(new Callback<BaseResponseModel<BookingResultModel>>() {
                 @Override
                 public void onResponse(Call<BaseResponseModel<BookingResultModel>> call, Response<BaseResponseModel<BookingResultModel>> response) {
-                    if (response.isSuccessful()) {
-                        Toast.makeText(SelectImageActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    if (response.body().getSuccess().equalsIgnoreCase("true")) {
+                        AlertSuccess.showAlertSuccess(SelectImageActivity.this,response.body().getMessage());
+                    }
+                    else if (response.body().getSuccess().equalsIgnoreCase("false")) {
+                        AlertError.showAlertError(SelectImageActivity.this,response.body().getMessage());
                     }
                 }
 

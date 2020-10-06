@@ -9,7 +9,7 @@ import com.canhdinh.helper.ImageHelper;
 import com.canhdinh.helper.InstallationHelper;
 import com.canhdinh.helper.LanguageHelper;
 
-public class AppProvider  {
+public class AppProviders {
     private static ObjectProviderInterface instance;
 
     public static void init(ObjectProviderInterface objectProviderInterface) {

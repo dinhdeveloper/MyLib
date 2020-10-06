@@ -34,7 +34,7 @@ public class AppObjectProvider  implements ObjectProviderInterface {
 
        ObjectProviderInterface objectProviderInterface1 = new AppObjectProvider(context);
 
-        AppProvider.init(objectProviderInterface1);
+        AppProviders.init(objectProviderInterface1);
     }
 
 //    @Override
