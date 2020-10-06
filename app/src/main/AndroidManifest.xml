@@ -14,6 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SelectImageActivity">
+            android:name=".SelectImageActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

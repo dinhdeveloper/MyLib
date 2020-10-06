@@ -16,24 +16,37 @@ import com.canhdinh.helper.AppProvider;
 import com.canhdinh.lib.helper.MyLog;
 import com.canhdinh.lib.roundview.RoundTextView;
 import com.canhdinh.lib.selectimage.BSImagePicker;
+import com.canhdinh.mylib.api.APIService;
+import com.canhdinh.mylib.api.APIUntil;
 import com.canhdinh.mylib.api.RequestUpdateResultPayment;
 import com.canhdinh.mylib.model.BaseResponseModel;
+import com.canhdinh.mylib.model.BookingResultModel;
 
 import java.io.File;
 import java.util.List;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SelectImageActivity extends AppCompatActivity implements BSImagePicker.OnSingleImageSelectedListener,
         BSImagePicker.OnMultiImageSelectedListener, BSImagePicker.ImageLoaderDelegate, BSImagePicker.OnSelectImageCancelledListener {
     private RoundTextView btnUpdateResult, btnSubmit;
     private ImageView imvImageResult;
     String payment_image;
+    APIService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image);
 
-        btnUpdateResult = (RoundTextView)findViewById(R.id.btnUpdateResult);
+        btnUpdateResult = (RoundTextView) findViewById(R.id.btnUpdateResult);
+        apiService = APIUntil.getServer();
+        btnUpdateResult = findViewById(R.id.btnUpdateResult);
         btnSubmit = findViewById(R.id.btnSubmit);
         imvImageResult = findViewById(R.id.imvImageResult);
 
@@ -44,31 +57,33 @@ public class SelectImageActivity extends AppCompatActivity implements BSImagePic
         });
 
         btnSubmit.setOnClickListener(view -> {
-//            RequestUpdateResultPayment.ApiParams params = new RequestUpdateResultPayment.ApiParams();
-//            params.id_booking = "74";
-//            params.payment_image = payment_image;
-//            params.type_manager = "update_result_payment";
-//
-//            AppProvider.getApiManagement().call(RequestUpdateResultPayment.class, params, new ApiRequest.ApiCallback<BaseResponseModel>() {
-//                @Override
-//                public void onSuccess(BaseResponseModel body) {
-//                    if (!TextUtils.isEmpty(body.getSuccess()) && body.getSuccess().equalsIgnoreCase("true")) {
-//                        MyLog.LogDebug(body.getMessage());
-//                    } else {
-//                        MyLog.LogDebug(body.getMessage());
-//                    }
-//                }
-//
-//                @Override
-//                public void onError(ErrorApiResponse error) {
-//                    Log.e("onError", error.message);
-//                }
-//
-//                @Override
-//                public void onFail(ApiRequest.RequestError error) {
-//                    Log.e("onError", error.name());
-//                }
-//            });
+            MultipartBody.Builder builder = new MultipartBody.Builder();
+            if (!TextUtils.isEmpty(payment_image)) {
+                File fileAvatar = new File(payment_image);
+                if (fileAvatar.exists()) {
+                    RequestBody fileBody = RequestBody.create(MediaType.parse("image/*"), fileAvatar);
+                    builder.addFormDataPart("payment_image", fileAvatar.getName(), fileBody);
+                }
+            }
+            builder.addFormDataPart("id_booking", "74");
+            builder.addFormDataPart("type_manager", "update_result_payment");
+            builder.addFormDataPart("detect", "booking_manager")
+                    .setType(MultipartBody.FORM);
+            RequestBody requestBody = builder.build();
+
+            apiService.updateImage(requestBody).enqueue(new Callback<BaseResponseModel<BookingResultModel>>() {
+                @Override
+                public void onResponse(Call<BaseResponseModel<BookingResultModel>> call, Response<BaseResponseModel<BookingResultModel>> response) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(SelectImageActivity.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<BaseResponseModel<BookingResultModel>> call, Throwable t) {
+                    Log.e("onFailure", t.getMessage());
+                }
+            });
         });
     }
 
@@ -84,6 +99,7 @@ public class SelectImageActivity extends AppCompatActivity implements BSImagePic
 
     @Override
     public void loadImage(Uri imageUri, ImageView ivImage) {
+        Glide.with(SelectImageActivity.this).load(imageUri).into(ivImage);
     }
 
     @Override
