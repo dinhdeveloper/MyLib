@@ -754,6 +754,5 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
             fragment.setArguments(args);
             return fragment;
         }
-
     }
 }

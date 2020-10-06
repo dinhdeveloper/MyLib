@@ -6,9 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -35,7 +33,7 @@ public class SelectImageActivity extends AppCompatActivity implements BSImagePic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image);
 
-        btnUpdateResult = findViewById(R.id.btnUpdateResult);
+        btnUpdateResult = (RoundTextView)findViewById(R.id.btnUpdateResult);
         btnSubmit = findViewById(R.id.btnSubmit);
         imvImageResult = findViewById(R.id.imvImageResult);
 
@@ -46,31 +44,31 @@ public class SelectImageActivity extends AppCompatActivity implements BSImagePic
         });
 
         btnSubmit.setOnClickListener(view -> {
-            RequestUpdateResultPayment.ApiParams params = new RequestUpdateResultPayment.ApiParams();
-            params.id_booking = "74";
-            params.payment_image = payment_image;
-            params.type_manager = "update_result_payment";
-
-            AppProvider.getApiManagement().call(RequestUpdateResultPayment.class, params, new ApiRequest.ApiCallback<BaseResponseModel>() {
-                @Override
-                public void onSuccess(BaseResponseModel body) {
-                    if (!TextUtils.isEmpty(body.getSuccess()) && body.getSuccess().equalsIgnoreCase("true")) {
-                        MyLog.LogDebug(body.getMessage());
-                    } else {
-                        MyLog.LogDebug(body.getMessage());
-                    }
-                }
-
-                @Override
-                public void onError(ErrorApiResponse error) {
-                    Log.e("onError", error.message);
-                }
-
-                @Override
-                public void onFail(ApiRequest.RequestError error) {
-                    Log.e("onError", error.name());
-                }
-            });
+//            RequestUpdateResultPayment.ApiParams params = new RequestUpdateResultPayment.ApiParams();
+//            params.id_booking = "74";
+//            params.payment_image = payment_image;
+//            params.type_manager = "update_result_payment";
+//
+//            AppProvider.getApiManagement().call(RequestUpdateResultPayment.class, params, new ApiRequest.ApiCallback<BaseResponseModel>() {
+//                @Override
+//                public void onSuccess(BaseResponseModel body) {
+//                    if (!TextUtils.isEmpty(body.getSuccess()) && body.getSuccess().equalsIgnoreCase("true")) {
+//                        MyLog.LogDebug(body.getMessage());
+//                    } else {
+//                        MyLog.LogDebug(body.getMessage());
+//                    }
+//                }
+//
+//                @Override
+//                public void onError(ErrorApiResponse error) {
+//                    Log.e("onError", error.message);
+//                }
+//
+//                @Override
+//                public void onFail(ApiRequest.RequestError error) {
+//                    Log.e("onError", error.name());
+//                }
+//            });
         });
     }
 
