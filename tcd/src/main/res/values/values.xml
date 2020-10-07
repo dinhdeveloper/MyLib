@@ -174,6 +174,17 @@
     <string name="imagepicker_gallery_intent_title">Select Multiple Images</string>
     <string name="imagepicker_no_image_text_view">There are no image in your device.</string>
 
+    <string name="listview_header_hint_normal">làm mới</string>
+    <string name="listview_header_hint_release">bắt đầu làm mới</string>
+    <string name="listview_loading">đang tải...</string>
+    <string name="nomore_loading">Không còn dữ liệu</string>
+    <string name="refreshing">đang tải...</string>
+    <string name="refresh_done">hoàn tất</string>
+    <string name="loading_done">hoàn tất</string>
+<!--    <string name="listview_header_last_time">cập nhật</string>-->
+
+    <string name="action">ACTION</string>
+
 <!--    <style name="Animations_PopDownMenu_Center">-->
 <!--        <item name="android:windowEnterAnimation">@anim/grow_from_top</item>-->
 <!--        <item name="android:windowExitAnimation">@anim/shrink_from_bottom</item>-->

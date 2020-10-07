@@ -8,14 +8,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
+import com.canhdinh.lib.cookiebar.CookieBar;
+import com.canhdinh.lib.cookiebar.OnActionClickListener;
+import com.canhdinh.lib.countdownview.CountDownListener;
+import com.canhdinh.lib.countdownview.CountDownView;
 import com.canhdinh.lib.edittext.FormattedEditText;
 import com.canhdinh.lib.helper.MyToast;
+import com.canhdinh.lib.ksnack.KSnack;
+import com.canhdinh.lib.ksnack.KSnackBarEventListener;
+import com.canhdinh.lib.ksnack.Slide;
 import com.canhdinh.lib.loadingbutton.ButtonLoading;
+import com.canhdinh.lib.noty.Noty;
 import com.canhdinh.lib.snackalert.SnackAlert;
 import com.canhdinh.lib.spinnerdatepicker.DatePicker;
 import com.canhdinh.lib.spinnerdatepicker.DatePickerDialog;
@@ -34,14 +45,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     SimpleDateFormat simpleDateFormat;
     PinTextView pinview;
     SwitchButton switchButton;
-    RecyclerView recyclerView;
-    Button search,select_image;
+    Button search,select_image,loadmore,noty,btnTop,btnBottom,btnCustomAnim,startcountdown;
     FormattedEditText formattedEditText_simple, formattedEditText;
+    CountDownView view_count_down;
 
+    private KSnack kSnack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        kSnack          = new KSnack(MainActivity.this);
+
         Button snackAlert = findViewById(R.id.snackAlert);
         Button set_date_button = findViewById(R.id.set_date_button);
         PinTextView pinview = findViewById(R.id.pinview);
@@ -49,9 +64,17 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         switchButton = findViewById(R.id.switch_button);
         formattedEditText_simple = findViewById(R.id.formattedEditText_simple);
         formattedEditText = findViewById(R.id.formattedEditText);
-        recyclerView = findViewById(R.id.recyclerView);
         search = findViewById(R.id.search);
         select_image = findViewById(R.id.select_image);
+        loadmore = findViewById(R.id.loadmore);
+        noty = findViewById(R.id.noty);
+        btnTop = findViewById(R.id.btnTop);
+        btnBottom = findViewById(R.id.btnBottom);
+        btnCustomAnim = findViewById(R.id.btnCustomAnim);
+        startcountdown = findViewById(R.id.startcountdown);
+        view_count_down = findViewById(R.id.view_count_down);
+
+        RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout) ;
 
         showConfilm.setOnClickListener(v -> {
 
@@ -105,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         snackAlert.setOnClickListener(v -> new SnackAlert(MainActivity.this)
                 .setTitle("Success")
                 .setMessage("This is a success message")
+                .setType(SnackAlert.SUCCESS)
                 .setDurationAnimationShow(600).show());
 
         set_date_button.setOnClickListener(v -> {
@@ -175,6 +199,80 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
         select_image.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SelectImageActivity.class));
+        });
+        loadmore.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, LoadMoreActivity.class));
+        });
+        noty.setOnClickListener(v -> {
+            kSnack.setListener(new KSnackBarEventListener() {
+                        @Override
+                        public void showedSnackBar() {
+                            System.out.println("Showed");
+                        }
+
+                        @Override
+                        public void stoppedSnackBar() {
+                            System.out.println("Stopped");
+                        }
+                    })
+                    .setAction("Click", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(MainActivity.this, "kSnack", Toast.LENGTH_SHORT).show();
+                            kSnack.dismiss();
+                        }
+                    })
+                    .setButtonTextColor(R.color.colorAccent)
+                    .setMessage("This is KSnack !")
+                    .setAnimation(Slide.Up.getAnimation(kSnack.getSnackView()), Slide.Down.getAnimation(kSnack.getSnackView()))
+                    .show();
+        });
+
+        btnTop.setOnClickListener(v -> {
+            CookieBar.build(MainActivity.this)
+                    .setTitle("Đơn hàng mới")
+                    .setTitleColor(R.color.progressColor)
+                    .setMessage("Bạn có đơn hàng mới")
+                    .setIcon(R.drawable.ic_baseline_notifications_48)
+                    .setCookiePosition(CookieBar.TOP)
+                    .setBackgroundColor(R.color.color_info)
+                    .setDuration(5000).show();
+        });
+
+        btnBottom.setOnClickListener(v -> {
+            CookieBar.build(MainActivity.this)
+                    .setDuration(5000)
+                    .setTitle("Thành công")
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setMessage("Thêm sản phẩm thành công")
+                    .setBackgroundColor(R.color.colorPrimary)
+                    .setActionColor(R.color.color_danger)
+                    .setTitleColor(R.color.color_info)
+                    .setCookiePosition(CookieBar.BOTTOM)
+                    .setAction("Xong", () -> Toast.makeText(MainActivity.this, "ok", Toast.LENGTH_SHORT).show())
+                    .show();
+        });
+
+        btnCustomAnim.setOnClickListener(v -> {
+            CookieBar.build(MainActivity.this)
+                    .setTitle("Đơn hàng mới")
+                    .setMessage("Bạn có đơn hàng mới")
+                    .setIcon(R.drawable.ic_baseline_notifications_48)
+                    .setMessageColor(R.color.white)
+                    .setBackgroundColor(R.color.color_info)
+                    .setDuration(5000)
+                    .setAnimationIn(android.R.anim.slide_in_left, android.R.anim.slide_in_left)
+                    .setAnimationOut(android.R.anim.slide_out_right, android.R.anim.slide_out_right)
+                    .show();
+        });
+
+        startcountdown.setOnClickListener(v -> {
+            view_count_down.setStartDuration(3000); // 1h =3601000
+            view_count_down.start();
+        });
+
+        view_count_down.setListener(() -> {
+            Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
         });
     }
 

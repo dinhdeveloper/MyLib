@@ -53,4 +53,7 @@
     <dimen name="titleBarHeight">40dp</dimen>
     <dimen name="weekDaysPaddingBottom">0dp</dimen>
     <dimen name="weekRowMinHeight">40dp</dimen>
+
+    <dimen name="textandiconmargin">10dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
 </resources>

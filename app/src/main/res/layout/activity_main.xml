@@ -2,157 +2,228 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/dp20"
+    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical"
-    android:id="@+id/root"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/search"
-        android:text="Search"
-        android:layout_width="200dp"
-        android:layout_height="40dp"/>
-    <Button
-        android:id="@+id/select_image"
-        android:text="select_image"
-        android:layout_width="200dp"
-        android:layout_height="40dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp20"
+            android:orientation="vertical">
 
-<!--    <com.canhdinh.tcd.ticketview.TicketView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="160dp"-->
-<!--        android:layout_marginTop="60dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:id="@+id/ticketView"-->
-<!--        app:ticketOrientation="vertical"-->
-<!--        app:ticketScallopRadius="10dp"-->
-<!--        app:ticketShowBorder="false"-->
-<!--        app:ticketScallopPositionPercent="50"-->
-<!--        app:ticketShowDivider="true"-->
-<!--        app:ticketDividerType="dash"-->
-<!--        app:ticketDividerPadding="0dp"-->
-<!--        app:ticketElevation="14dp"-->
-<!--        tools:ignore="MissingConstraints" />-->
+            <com.canhdinh.lib.countdownview.CountDownView
+                android:id="@+id/view_count_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            <Button
+                android:id="@+id/startcountdown"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="startcountdown" />
 
-    <Button
-        android:id="@+id/snackAlert"
-        android:text="SnackAlert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/showConfilm"
-        android:text="showConfilm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/search"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="Search" />
 
-    <com.canhdinh.lib.loadingbutton.ButtonLoading
-        android:id="@+id/loadingbutton"
-        android:layout_width="223dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:padding="8dp"
-        app:BL_backgroundColor="#9c9b9999"
-        app:BL_circleColor="#00AFEF"
-        app:BL_circleColorSecond="#8000AFEF"
-        app:BL_enable="true"
-        app:BL_stateShow="normal"
-        app:BL_text="Login"
-        app:BL_textColor="#ffffff"
-        app:BL_textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.539" />
+            <Button
+                android:id="@+id/select_image"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="select_image" />
 
-    <Button
-        android:id="@+id/set_date_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Set date"/>
+            <Button
+                android:id="@+id/loadmore"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="load_more" />
 
-    <com.canhdinh.lib.textview.PinTextView
-        android:id="@+id/pinview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:inputType="text"
-        app:pinHeight="40dp"
-        app:pinLength="4"
-        app:pinWidth="40dp"/>
+            <!--    <com.canhdinh.tcd.ticketview.TicketView-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="160dp"-->
+            <!--        android:layout_marginTop="60dp"-->
+            <!--        android:layout_marginLeft="20dp"-->
+            <!--        android:layout_marginRight="20dp"-->
+            <!--        android:id="@+id/ticketView"-->
+            <!--        app:ticketOrientation="vertical"-->
+            <!--        app:ticketScallopRadius="10dp"-->
+            <!--        app:ticketShowBorder="false"-->
+            <!--        app:ticketScallopPositionPercent="50"-->
+            <!--        app:ticketShowDivider="true"-->
+            <!--        app:ticketDividerType="dash"-->
+            <!--        app:ticketDividerPadding="0dp"-->
+            <!--        app:ticketElevation="14dp"-->
+            <!--        tools:ignore="MissingConstraints" />-->
 
-    <com.canhdinh.lib.togglebutton.SwitchButton
-        android:id="@+id/switch_button"
-        app:sb_background="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/snackAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SnackAlert" />
 
-    <com.canhdinh.lib.edittext.FormattedEditText
-        android:id="@+id/formattedEditText_simple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:maxLength="13"
-        app:fet_clearDrawable="@drawable/icon_clear"
-        app:fet_drawableGravity="fet_center"
-        app:fet_drawablePadding="4dp"
-        app:fet_formatStyle="344"
-        app:fet_mode="mode_simple"
-        app:fet_placeholder="-" />
+            <Button
+                android:id="@+id/showConfilm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="showConfilm" />
 
-    <com.canhdinh.lib.edittext.FormattedEditText
-        android:id="@+id/formattedEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:maxLength="19"
-        app:fet_clearDrawable="@drawable/icon_clear"
-        app:fet_drawableGravity="fet_center"
-        app:fet_drawablePadding="4dp"
-        app:fet_formatStyle="+(86)-***-****-****"
-        app:fet_mark="*"
-        app:fet_mode="mode_complex" />
+            <Button
+                android:id="@+id/noty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KSnack Bottom" />
 
-    <com.canhdinh.lib.edittext.FormattedEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:maxLength="19"
-        app:fet_clearDrawable="@drawable/icon_clear"
-        app:fet_drawableGravity="fet_center"
-        app:fet_drawablePadding="4dp"
-        app:fet_emptyPlaceholder="_"
-        app:fet_formatStyle="+(86)-000-0000-0000"
-        app:fet_mode="mode_mask"
-        app:fet_showHintWhileEmpty="true" />
+            <Button
+                android:id="@+id/btnTop"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="20dp"
+                android:text="top cookie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <com.canhdinh.lib.edittext.FormattedEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:digits="0123456789X"
-        android:maxLength="22"
-        app:fet_clearDrawable="@drawable/icon_clear"
-        app:fet_drawableGravity="fet_center"
-        app:fet_drawablePadding="4dp"
-        app:fet_formatStyle="000 000 0000 0000 000*"
-        app:fet_hintText="100 000 2020 0101 000X"
-        app:fet_mode="mode_hint"
-        app:fet_showHintWhileEmpty="false" />
+            <Button
+                android:id="@+id/btnBottom"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="20dp"
+                android:text="bottom_cookie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTop" />
 
+            <Button
+                android:id="@+id/btnCustomAnim"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="20dp"
+                android:text="custom_animations"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBottom" />
+
+
+            <com.canhdinh.lib.loadingbutton.ButtonLoading
+                android:id="@+id/loadingbutton"
+                android:layout_width="223dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                app:BL_backgroundColor="#9c9b9999"
+                app:BL_circleColor="#00AFEF"
+                app:BL_circleColorSecond="#8000AFEF"
+                app:BL_enable="true"
+                app:BL_stateShow="normal"
+                app:BL_text="Login"
+                app:BL_textColor="#ffffff"
+                app:BL_textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.539" />
+
+            <Button
+                android:id="@+id/set_date_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.canhdinh.lib.textview.PinTextView
+                android:id="@+id/pinview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputType="text"
+                app:pinHeight="40dp"
+                app:pinLength="4"
+                app:pinWidth="40dp" />
+
+            <com.canhdinh.lib.togglebutton.SwitchButton
+                android:id="@+id/switch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:sb_background="@color/white" />
+
+            <com.canhdinh.lib.edittext.FormattedEditText
+                android:id="@+id/formattedEditText_simple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="13"
+                app:fet_clearDrawable="@drawable/icon_clear"
+                app:fet_drawableGravity="fet_center"
+                app:fet_drawablePadding="4dp"
+                app:fet_formatStyle="344"
+                app:fet_mode="mode_simple"
+                app:fet_placeholder="-" />
+
+            <com.canhdinh.lib.edittext.FormattedEditText
+                android:id="@+id/formattedEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="19"
+                app:fet_clearDrawable="@drawable/icon_clear"
+                app:fet_drawableGravity="fet_center"
+                app:fet_drawablePadding="4dp"
+                app:fet_formatStyle="+(86)-***-****-****"
+                app:fet_mark="*"
+                app:fet_mode="mode_complex" />
+
+            <com.canhdinh.lib.edittext.FormattedEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="19"
+                app:fet_clearDrawable="@drawable/icon_clear"
+                app:fet_drawableGravity="fet_center"
+                app:fet_drawablePadding="4dp"
+                app:fet_emptyPlaceholder="_"
+                app:fet_formatStyle="+(86)-000-0000-0000"
+                app:fet_mode="mode_mask"
+                app:fet_showHintWhileEmpty="true" />
+
+            <com.canhdinh.lib.edittext.FormattedEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789X"
+                android:maxLength="22"
+                app:fet_clearDrawable="@drawable/icon_clear"
+                app:fet_drawableGravity="fet_center"
+                app:fet_drawablePadding="4dp"
+                app:fet_formatStyle="000 000 0000 0000 000*"
+                app:fet_hintText="100 000 2020 0101 000X"
+                app:fet_mode="mode_hint"
+                app:fet_showHintWhileEmpty="false" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
