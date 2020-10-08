@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     Button search, select_image,
             loadmore, noty, btnTop,
             btnBottom, btnCustomAnim,
-            startcountdown, button1;
+            startcountdown, button1,slider;
     FormattedEditText formattedEditText_simple, formattedEditText;
     CountDownView view_count_down;
 
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         startcountdown = findViewById(R.id.startcountdown);
         view_count_down = findViewById(R.id.view_count_down);
         button1 = findViewById(R.id.button1);
+        slider = findViewById(R.id.slider);
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout);
 
         showConfilm.setOnClickListener(v -> {
@@ -280,6 +281,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         button1.setOnClickListener(v -> {
             openDialog(false);
+        });
+
+        slider.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, SlideActivity.class));
         });
     }
 
