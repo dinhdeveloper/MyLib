@@ -2,7 +2,6 @@ package com.canhdinh.mylib;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +15,8 @@ import android.widget.Toast;
 
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
+import com.canhdinh.lib.colorpicker.ColorPickerDialog;
 import com.canhdinh.lib.cookiebar.CookieBar;
-import com.canhdinh.lib.cookiebar.OnActionClickListener;
-import com.canhdinh.lib.countdownview.CountDownListener;
 import com.canhdinh.lib.countdownview.CountDownView;
 import com.canhdinh.lib.edittext.FormattedEditText;
 import com.canhdinh.lib.helper.MyToast;
@@ -26,7 +24,6 @@ import com.canhdinh.lib.ksnack.KSnack;
 import com.canhdinh.lib.ksnack.KSnackBarEventListener;
 import com.canhdinh.lib.ksnack.Slide;
 import com.canhdinh.lib.loadingbutton.ButtonLoading;
-import com.canhdinh.lib.noty.Noty;
 import com.canhdinh.lib.snackalert.SnackAlert;
 import com.canhdinh.lib.spinnerdatepicker.DatePicker;
 import com.canhdinh.lib.spinnerdatepicker.DatePickerDialog;
@@ -45,17 +42,23 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     SimpleDateFormat simpleDateFormat;
     PinTextView pinview;
     SwitchButton switchButton;
-    Button search,select_image,loadmore,noty,btnTop,btnBottom,btnCustomAnim,startcountdown;
+    Button search, select_image,
+            loadmore, noty, btnTop,
+            btnBottom, btnCustomAnim,
+            startcountdown, button1;
     FormattedEditText formattedEditText_simple, formattedEditText;
     CountDownView view_count_down;
 
     private KSnack kSnack;
+    int DefaultColor ;
+    String hexColor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        kSnack          = new KSnack(MainActivity.this);
+        kSnack = new KSnack(MainActivity.this);
 
         Button snackAlert = findViewById(R.id.snackAlert);
         Button set_date_button = findViewById(R.id.set_date_button);
@@ -73,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         btnCustomAnim = findViewById(R.id.btnCustomAnim);
         startcountdown = findViewById(R.id.startcountdown);
         view_count_down = findViewById(R.id.view_count_down);
-
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout) ;
+        button1 = findViewById(R.id.button1);
+        RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout);
 
         showConfilm.setOnClickListener(v -> {
 
@@ -205,16 +208,16 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
         noty.setOnClickListener(v -> {
             kSnack.setListener(new KSnackBarEventListener() {
-                        @Override
-                        public void showedSnackBar() {
-                            System.out.println("Showed");
-                        }
+                @Override
+                public void showedSnackBar() {
+                    System.out.println("Showed");
+                }
 
-                        @Override
-                        public void stoppedSnackBar() {
-                            System.out.println("Stopped");
-                        }
-                    })
+                @Override
+                public void stoppedSnackBar() {
+                    System.out.println("Stopped");
+                }
+            })
                     .setAction("Click", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -274,6 +277,27 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         view_count_down.setListener(() -> {
             Toast.makeText(this, "stop", Toast.LENGTH_SHORT).show();
         });
+
+        button1.setOnClickListener(v -> {
+            openDialog(false);
+        });
+    }
+
+    void openDialog(boolean supportsAlpha) {
+        ColorPickerDialog dialog = new ColorPickerDialog(MainActivity.this, DefaultColor, supportsAlpha, new ColorPickerDialog.OnPickerListener() {
+            @Override
+            public void onOk(ColorPickerDialog dialog, int color) {
+                DefaultColor = color;
+                hexColor = String.format("%06X", (0xFFFFFF & color));
+                Toast.makeText(MainActivity.this, hexColor, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancel(ColorPickerDialog dialog) {
+                Toast.makeText(getApplicationContext(), "cancel", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.show();
     }
 
     @Override
