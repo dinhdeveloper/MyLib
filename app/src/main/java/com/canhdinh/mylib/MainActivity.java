@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.canhdinh.SliderActivity;
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
 import com.canhdinh.lib.colorpicker.ColorPickerDialog;
@@ -45,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     Button search, select_image,
             loadmore, noty, btnTop,
             btnBottom, btnCustomAnim,
-            startcountdown, button1,slider;
+            startcountdown, button1,
+            slider,imageslider;
     FormattedEditText formattedEditText_simple, formattedEditText;
     CountDownView view_count_down;
 
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         view_count_down = findViewById(R.id.view_count_down);
         button1 = findViewById(R.id.button1);
         slider = findViewById(R.id.slider);
+        imageslider = findViewById(R.id.imageslider);
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout);
 
         showConfilm.setOnClickListener(v -> {
@@ -285,6 +288,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         slider.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SlideActivity.class));
+        });
+        imageslider.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, SliderActivity.class));
         });
     }
 
