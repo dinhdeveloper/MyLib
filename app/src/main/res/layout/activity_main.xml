@@ -139,6 +139,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnBottom" />
 
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="50dp">
+                <com.canhdinh.lib.labelview.LabelTextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="dsdsfsgsg"
+                    android:textColor="@color/black"
+                    app:label_backgroundColor="#03A9F4"
+                    app:label_distance="15dp"
+                    app:label_orientation="RIGHT_TOP"
+                    app:label_text="POP"
+                    app:label_textSize="10sp"
+                    app:label_textStyle="BOLD_ITALIC"/>
+            </LinearLayout>
+
 
             <com.canhdinh.lib.loadingbutton.ButtonLoading
                 android:id="@+id/loadingbutton"
