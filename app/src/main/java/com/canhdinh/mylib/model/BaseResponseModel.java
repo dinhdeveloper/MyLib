@@ -2,9 +2,10 @@ package com.canhdinh.mylib.model;
 
 import androidx.annotation.Nullable;
 
-import com.canhdinh.api.BaseApiResponse;
 
-public class BaseResponseModel  <T> implements BaseApiResponse {
+import java.io.Serializable;
+
+public class BaseResponseModel  <T> implements Serializable {
     @Nullable
     private String success;
 

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
-import com.canhdinh.api.ApiService;
 import com.canhdinh.lib.recyclerview.ProgressStyle;
 import com.canhdinh.lib.recyclerview.XRecyclerView;
 import com.canhdinh.mylib.adapter.ProductAdapter;
