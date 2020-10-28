@@ -48,7 +48,7 @@ public class SearchActivity extends AppCompatActivity implements WaveSwipeRefres
         mWaveSwipeRefreshLayout.setWaveColor(Color.argb(100, 255, 0, 0));
 
         rippleView.setOnRippleCompleteListener(rippleView1 -> {
-            MyToast.show(SearchActivity.this, "ok");
+            getDataApi();
         });
     }
 
