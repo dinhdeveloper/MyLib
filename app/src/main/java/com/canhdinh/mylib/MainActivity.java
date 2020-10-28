@@ -3,6 +3,7 @@ package com.canhdinh.mylib;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,11 +17,14 @@ import android.widget.Toast;
 import com.canhdinh.SliderActivity;
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
+import com.canhdinh.lib.alert.AlertError;
+import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.colorpicker.ColorPickerDialog;
 import com.canhdinh.lib.cookiebar.CookieBar;
 import com.canhdinh.lib.countdownview.CountDownView;
 import com.canhdinh.lib.edittext.FormattedEditText;
 import com.canhdinh.lib.helper.MyToast;
+import com.canhdinh.lib.kalert.KAlertDialog;
 import com.canhdinh.lib.ksnack.KSnack;
 import com.canhdinh.lib.ksnack.KSnackBarEventListener;
 import com.canhdinh.lib.ksnack.Slide;
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             loadmore, noty, btnTop,
             btnBottom, btnCustomAnim,
             startcountdown, button1,
-            slider,imageslider;
+            slider,imageslider,kAlert;
     FormattedEditText formattedEditText_simple, formattedEditText;
     CountDownView view_count_down;
 
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         button1 = findViewById(R.id.button1);
         slider = findViewById(R.id.slider);
         imageslider = findViewById(R.id.imageslider);
+        kAlert = findViewById(R.id.kAlert);
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout);
 
         showConfilm.setOnClickListener(v -> {
@@ -291,6 +296,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
         imageslider.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SliderActivity.class));
+        });
+
+        kAlert.setOnClickListener(v -> {
+            AlertSuccess.showAlertSuccess(MainActivity.this,"Không tải được dữ liệu");
         });
     }
 

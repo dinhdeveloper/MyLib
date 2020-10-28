@@ -658,4 +658,8 @@
 
     </declare-styleable>
 
+    <attr name="alertDialogDark" format="reference"/>
+    <attr name="alertDialogTextColor" format="color|reference"/>
+    <attr name="alertDialogContentTextColor" format="color|reference"/>
+
 </resources>

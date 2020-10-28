@@ -146,6 +146,12 @@
                 android:layout_height="40dp"
                 android:text="imageslider" />
 
+            <Button
+                android:id="@+id/kAlert"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="KAlertDialog" />
+
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="50dp">
