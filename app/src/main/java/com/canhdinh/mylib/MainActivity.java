@@ -19,6 +19,7 @@ import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
 import com.canhdinh.lib.alert.AlertError;
 import com.canhdinh.lib.alert.AlertSuccess;
+import com.canhdinh.lib.alert.CustomAlertDialog;
 import com.canhdinh.lib.colorpicker.ColorPickerDialog;
 import com.canhdinh.lib.cookiebar.CookieBar;
 import com.canhdinh.lib.countdownview.CountDownView;
@@ -288,7 +289,44 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
 
         button1.setOnClickListener(v -> {
-            openDialog(false);
+            new CustomAlertDialog(MainActivity.this, CustomAlertDialog.WARNING_TYPE)
+                    .setTitleText("Are you sure?")
+                    .setContentText("You won't be able to recover this file!")
+                    .setConfirmText("Delete!")
+                    .setConfirmClickListener(new CustomAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(CustomAlertDialog sDialog) {
+                            sDialog.dismissWithAnimation();
+
+                            new CustomAlertDialog(MainActivity.this, CustomAlertDialog.WARNING_TYPE)
+                                    .setTitleText("Are you sure?")
+                                    .setContentText("Won't be able to recover this file!")
+                                    .setConfirmText("Yes,delete it!")
+                                    .setConfirmClickListener(new CustomAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(CustomAlertDialog sDialog) {
+                                            sDialog
+                                                    .setTitleText("Deleted!")
+                                                    .setContentText("Your imaginary file has been deleted!")
+                                                    .setConfirmText("OK")
+                                                    .setConfirmClickListener(null)
+                                                    .changeAlertType(CustomAlertDialog.SUCCESS_TYPE);
+                                        }
+                                    })
+                                    .show();
+                        }
+                    })
+                    .setCancelButton("Cancel", new CustomAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(CustomAlertDialog sDialog) {
+                            sDialog.dismissWithAnimation();
+                            new CustomAlertDialog(MainActivity.this, CustomAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Oops...")
+                                    .setContentText("Something went wrong!")
+                                    .show();
+                        }
+                    })
+                    .show();
         });
 
         slider.setOnClickListener(v -> {

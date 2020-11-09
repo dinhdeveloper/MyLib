@@ -96,7 +96,7 @@
     <color name="range_bg_color_app">#FFCDD2</color>
     <color name="range_date_color">@color/default_date_color</color>
     <color name="red">#e31b23</color>
-    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_color">#C84F37</color>
     <color name="red_btn_bg_pressed_color">#CD5B55</color>
     <color name="red_press">#b61619</color>
     <color name="selected_date_circle_color">#54B948</color>
