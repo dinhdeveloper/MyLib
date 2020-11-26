@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.canhdinh.lib.R;
 
@@ -298,3 +299,17 @@ public class ColorPickerDialog {
 		viewAlphaOverlay.setBackgroundDrawable(gd);
 	}
 }
+//	ColorPickerDialog dialog = new ColorPickerDialog(MainActivity.this, DefaultColor, supportsAlpha, new ColorPickerDialog.OnPickerListener() {
+//		@Override
+//		public void onOk(ColorPickerDialog dialog, int color) {
+//			DefaultColor = color;
+//			hexColor = String.format("%06X", (0xFFFFFF & color));
+//			Toast.makeText(MainActivity.this, hexColor, Toast.LENGTH_SHORT).show();
+//		}
+//
+//		@Override
+//		public void onCancel(ColorPickerDialog dialog) {
+//			Toast.makeText(getApplicationContext(), "cancel", Toast.LENGTH_SHORT).show();
+//		}
+//	});
+//        dialog.show();

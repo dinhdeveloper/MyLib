@@ -662,4 +662,118 @@
     <attr name="alertDialogTextColor" format="color|reference"/>
     <attr name="alertDialogContentTextColor" format="color|reference"/>
 
+
+    <declare-styleable name="PasscodeView">
+        <attr name="passcodeViewType" format="enum">
+            <enum name="set_passcode" value="0"/>
+            <enum name="check_passcode" value="1"/>
+        </attr>
+        <attr name="normalStateColor" format="color"/>
+        <attr name="correctStateColor" format="color"/>
+        <attr name="wrongStateColor" format="color"/>
+        <attr name="numberTextColor" format="color"/>
+        <attr name="passcodeLength" format="integer"/>
+        <attr name="firstInputTip" format="string"/>
+        <attr name="secondInputTip" format="string"/>
+        <attr name="wrongLengthTip" format="string"/>
+        <attr name="wrongInputTip" format="string"/>
+        <attr name="correctInputTip" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgress">
+        <attr name="progressBorderWidth" format="dimension" />
+        <attr name="showArrow" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="JumpBall">
+        <attr name="ballRadius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="GravView">
+        <attr name="colorGenerator" format="string" />
+        <attr name="pointGenerator" format="string" />
+        <attr name="gravGenerator" format="string" />
+        <attr name="animationGenerator" format="string" />
+        <attr name="animationGenerators" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SingleColorGenerator">
+        <attr name="single_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ArrayColorGenerator">
+        <attr name="array_colors" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="BallGenerator">
+        <attr name="ball_size" format="dimension" />
+        <attr name="ball_from_size" format="dimension" />
+        <attr name="ball_to_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RectangleGenerator">
+        <attr name="rectangle_width" format="dimension" />
+        <attr name="rectangle_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RegularPointGenerator">
+        <attr name="regular_cell_size" format="integer" />
+        <attr name="regular_variance" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularPointGenerator">
+        <attr name="circular_cell_size" format="integer" />
+        <attr name="circular_variance" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ShakeAnimator">
+        <attr name="shake_min_duration" format="integer" />
+        <attr name="shake_max_duration" format="integer" />
+        <attr name="shake_variance" format="dimension" />
+        <attr name="shake_direction" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SideToSideAnimator">
+        <attr name="side_to_side_interpolator" format="string" />
+        <attr name="side_to_side_min_duration" format="integer" />
+        <attr name="side_to_side_max_duration" format="integer" />
+        <attr name="side_to_side_direction" format="enum">
+            <enum name="leftToRight" value="0"/>
+            <enum name="rightToLeft" value="1"/>
+            <enum name="upToDown" value="2"/>
+            <enum name="downToUp" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BallSizeAnimator">
+        <attr name="ball_size_min_duration" format="integer" />
+        <attr name="ball_size_max_duration" format="integer" />
+        <attr name="ball_size_from_size" format="dimension" />
+        <attr name="ball_size_to_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="PercentPointGenerator">
+        <attr name="percent_points_array" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AlphaAnimator">
+        <attr name="alpha_from" format="integer" />
+        <attr name="alpha_to" format="integer" />
+        <attr name="alpha_min_duration" format="integer" />
+        <attr name="alpha_max_duration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="PathAnimator">
+        <attr name="path_variance_from" format="dimension" />
+        <attr name="path_variance_to" format="dimension" />
+        <attr name="path" format="string" />
+        <attr name="path_original_width" format="integer" />
+        <attr name="path_original_height" format="integer" />
+        <attr name="path_min_duration" format="integer" />
+        <attr name="path_max_duration" format="integer" />
+    </declare-styleable>
+
 </resources>

@@ -135,4 +135,5 @@
     <color name="default_action_color">#26a69a</color>
 
     <color name="ksnack_dark">#3d3d3d</color>
+    <color name="text_black">#000</color>
 </resources>

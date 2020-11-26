@@ -316,3 +316,12 @@ public class CookieBar {
         void initView(View view);
     }
 }
+//
+//CookieBar.build(MainActivity.this)
+//        .setTitle("Đơn hàng mới")
+//        .setTitleColor(R.color.progressColor)
+//        .setMessage("Bạn có đơn hàng mới")
+//        .setIcon(R.drawable.ic_baseline_notifications_48)
+//        .setCookiePosition(CookieBar.TOP)
+//        .setBackgroundColor(R.color.color_info)
+//        .setDuration(5000).show();

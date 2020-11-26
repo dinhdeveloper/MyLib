@@ -2,12 +2,17 @@ package com.canhdinh.mylib;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -19,7 +24,9 @@ import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
 import com.canhdinh.lib.alert.AlertError;
 import com.canhdinh.lib.alert.AlertSuccess;
+import com.canhdinh.lib.alert.CircleProgress;
 import com.canhdinh.lib.alert.CustomAlertDialog;
+import com.canhdinh.lib.alert.JumpBall;
 import com.canhdinh.lib.colorpicker.ColorPickerDialog;
 import com.canhdinh.lib.cookiebar.CookieBar;
 import com.canhdinh.lib.countdownview.CountDownView;
@@ -30,6 +37,8 @@ import com.canhdinh.lib.ksnack.KSnack;
 import com.canhdinh.lib.ksnack.KSnackBarEventListener;
 import com.canhdinh.lib.ksnack.Slide;
 import com.canhdinh.lib.loadingbutton.ButtonLoading;
+import com.canhdinh.lib.munti_select.MultiSelectDialog;
+import com.canhdinh.lib.munti_select.MultiSelectModel;
 import com.canhdinh.lib.snackalert.SnackAlert;
 import com.canhdinh.lib.spinnerdatepicker.DatePicker;
 import com.canhdinh.lib.spinnerdatepicker.DatePickerDialog;
@@ -38,6 +47,7 @@ import com.canhdinh.lib.textview.PinTextView;
 import com.canhdinh.lib.togglebutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -52,12 +62,23 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             loadmore, noty, btnTop,
             btnBottom, btnCustomAnim,
             startcountdown, button1,
-            slider,imageslider,kAlert;
+            slider, imageslider, kAlert,
+            passcode;
+
+    Button grav, robot, ball_wave, falcon, bubble, path;
     FormattedEditText formattedEditText_simple, formattedEditText;
     CountDownView view_count_down;
+    CircleProgress circleProgress;
+    JumpBall jump_ball;
+
+    private String TAG = "Cancel";
+
+    Button show_dialog_btn;
+
+    MultiSelectDialog multiSelectDialog;
 
     private KSnack kSnack;
-    int DefaultColor ;
+    int DefaultColor;
     String hexColor;
 
     @Override
@@ -87,7 +108,84 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         slider = findViewById(R.id.slider);
         imageslider = findViewById(R.id.imageslider);
         kAlert = findViewById(R.id.kAlert);
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.myLayout);
+        passcode = findViewById(R.id.passcode);
+        circleProgress = findViewById(R.id.circleProgress);
+        jump_ball = findViewById(R.id.jump_ball);
+        grav = findViewById(R.id.grav_v);
+        robot = findViewById(R.id.robot);
+        ball_wave = findViewById(R.id.ball_wave);
+        falcon = findViewById(R.id.falcon);
+        bubble = findViewById(R.id.bubble);
+        path = findViewById(R.id.path);
+
+        show_dialog_btn = findViewById(R.id.show_dialog);
+
+        //preselected Ids of Country List
+        final ArrayList<Integer> alreadySelectedCountries = new ArrayList<>();
+        alreadySelectedCountries.add(1);
+        alreadySelectedCountries.add(3);
+        alreadySelectedCountries.add(4);
+        alreadySelectedCountries.add(7);
+
+        //List of Countries with Name and Id
+        ArrayList<MultiSelectModel> listOfCountries = new ArrayList<>();
+        listOfCountries.add(new MultiSelectModel(1, "INDIA"));
+        listOfCountries.add(new MultiSelectModel(2, "USA"));
+        listOfCountries.add(new MultiSelectModel(3, "UK"));
+        listOfCountries.add(new MultiSelectModel(4, "UAE"));
+        listOfCountries.add(new MultiSelectModel(5, "JAPAN"));
+        listOfCountries.add(new MultiSelectModel(6, "SINGAPORE"));
+        listOfCountries.add(new MultiSelectModel(7, "CHINA"));
+        listOfCountries.add(new MultiSelectModel(8, "RUSSIA"));
+        listOfCountries.add(new MultiSelectModel(9, "BANGLADESH"));
+        listOfCountries.add(new MultiSelectModel(10, "BELGIUM"));
+        listOfCountries.add(new MultiSelectModel(11, "DENMARK"));
+        listOfCountries.add(new MultiSelectModel(12, "GERMANY"));
+        listOfCountries.add(new MultiSelectModel(13, "HONG KONG"));
+        listOfCountries.add(new MultiSelectModel(14, "INDONESIA"));
+        listOfCountries.add(new MultiSelectModel(15, "NETHERLAND NETHERLAND NETHERLAND NETHERLAND"));
+        listOfCountries.add(new MultiSelectModel(16, "NEW ZEALAND"));
+        listOfCountries.add(new MultiSelectModel(17, "PORTUGAL"));
+        listOfCountries.add(new MultiSelectModel(18, "KUWAIT"));
+        listOfCountries.add(new MultiSelectModel(19, "QATAR"));
+        listOfCountries.add(new MultiSelectModel(20, "SAUDI ARABIA"));
+        listOfCountries.add(new MultiSelectModel(21, "SRI LANKA"));
+        listOfCountries.add(new MultiSelectModel(130, "CANADA"));
+
+        //MultiSelectModel
+        multiSelectDialog = new MultiSelectDialog()
+                .title("Chọn đất nước") //setting title for dialog
+                .titleSize(20)
+                .positiveText("Chọn")
+                .negativeText("Hủy bỏ")
+                .setMinSelectionLimit(0)
+                .setMaxSelectionLimit(listOfCountries.size())
+                .preSelectIDsList(alreadySelectedCountries) //List of ids that you need to be selected
+                .multiSelectList(listOfCountries) // the multi select model list with ids and name
+                .onSubmit(new MultiSelectDialog.SubmitCallbackListener() {
+                    @Override
+                    public void onSelected(ArrayList<Integer> selectedIds, ArrayList<String> selectedNames, String dataString) {
+                        //will return list of selected IDS
+                        for (int i = 0; i < selectedIds.size(); i++) {
+                            Toast.makeText(MainActivity.this, "Selected Ids : " + selectedIds.get(i) + "\n" +
+                                    "Selected Names : " + selectedNames.get(i) + "\n" +
+                                    "DataString : " + dataString, Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Log.d(TAG, "Dialog cancelled");
+
+                    }
+                });
+        show_dialog_btn.setOnClickListener(view -> {
+
+            multiSelectDialog.show(getSupportFragmentManager(), "multiSelectDialog");
+        });
+
 
         showConfilm.setOnClickListener(v -> {
 
@@ -337,9 +435,67 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
 
         kAlert.setOnClickListener(v -> {
-            AlertSuccess.showAlertSuccess(MainActivity.this,"Không tải được dữ liệu");
+            AlertSuccess.showAlertSuccess(MainActivity.this, "Không tải được dữ liệu");
         });
+
+        passcode.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, PassCodeActivity.class));
+        });
+
+        jump_ball.setOnClickListener(view -> {
+            jump_ball.start();
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    jump_ball.finish();
+                }
+            }, 1000);
+        });
+
+        grav.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, AnimationActivity.class));
+        });
+
     }
+
+    public void addFragment(Fragment fragment, boolean addToBackStack) {
+        if (fragment != null && !fragment.isAdded()) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.add(R.id.root, fragment);
+
+            // skip add fragment to back stack if it is first fragment
+            if (addToBackStack) {
+                transaction.addToBackStack(null);
+            } else {
+                fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            }
+
+            transaction.commitAllowingStateLoss();
+        }
+    }
+
+    public void replaceFragment(Fragment fragment, boolean addToBackStack) {
+        if (fragment != null && !fragment.isAdded()) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.root, fragment);
+
+            // skip add fragment to back stack if it is first fragment
+            if (addToBackStack) {
+                transaction.addToBackStack(null);
+            } else {
+                fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            }
+
+            transaction.commitAllowingStateLoss();
+        }
+    }
+
 
     void openDialog(boolean supportsAlpha) {
         ColorPickerDialog dialog = new ColorPickerDialog(MainActivity.this, DefaultColor, supportsAlpha, new ColorPickerDialog.OnPickerListener() {
