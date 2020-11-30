@@ -1,5 +1,6 @@
 package com.canhdinh.mylib;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -27,6 +29,7 @@ import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.alert.CircleProgress;
 import com.canhdinh.lib.alert.CustomAlertDialog;
 import com.canhdinh.lib.alert.JumpBall;
+import com.canhdinh.lib.circlemenu.CircleMenuView;
 import com.canhdinh.lib.colorpicker.ColorPickerDialog;
 import com.canhdinh.lib.cookiebar.CookieBar;
 import com.canhdinh.lib.countdownview.CountDownView;
@@ -119,6 +122,55 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         path = findViewById(R.id.path);
 
         show_dialog_btn = findViewById(R.id.show_dialog);
+
+        final CircleMenuView menu = findViewById(R.id.circle_menu);
+        menu.setEventListener(new CircleMenuView.EventListener() {
+            @Override
+            public void onMenuOpenAnimationStart(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuOpenAnimationStart");
+            }
+
+            @Override
+            public void onMenuOpenAnimationEnd(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuOpenAnimationEnd");
+            }
+
+            @Override
+            public void onMenuCloseAnimationStart(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuCloseAnimationStart");
+            }
+
+            @Override
+            public void onMenuCloseAnimationEnd(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuCloseAnimationEnd");
+            }
+
+            @Override
+            public void onButtonClickAnimationStart(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonClickAnimationStart| index: " + index);
+            }
+
+            @Override
+            public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonClickAnimationEnd| index: " + index);
+            }
+
+            @Override
+            public boolean onButtonLongClick(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonLongClick| index: " + index);
+                return true;
+            }
+
+            @Override
+            public void onButtonLongClickAnimationStart(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonLongClickAnimationStart| index: " + index);
+            }
+
+            @Override
+            public void onButtonLongClickAnimationEnd(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonLongClickAnimationEnd| index: " + index);
+            }
+        });
 
         //preselected Ids of Country List
         final ArrayList<Integer> alreadySelectedCountries = new ArrayList<>();

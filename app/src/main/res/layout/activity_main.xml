@@ -20,6 +20,14 @@
             android:layout_margin="@dimen/dp20"
             android:orientation="vertical">
 
+            <com.canhdinh.lib.circlemenu.CircleMenuView
+                android:id="@+id/circle_menu"
+                app:icon_color="@color/progressColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:button_colors="@array/colors"
+                app:button_icons="@array/icons" />
+
             <com.canhdinh.lib.countdownview.CountDownView
                 android:id="@+id/view_count_down"
                 android:layout_width="wrap_content"
