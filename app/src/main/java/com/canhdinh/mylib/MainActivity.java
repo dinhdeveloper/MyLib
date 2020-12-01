@@ -47,6 +47,7 @@ import com.canhdinh.lib.spinnerdatepicker.DatePicker;
 import com.canhdinh.lib.spinnerdatepicker.DatePickerDialog;
 import com.canhdinh.lib.spinnerdatepicker.SpinnerDatePickerDialogBuilder;
 import com.canhdinh.lib.textview.PinTextView;
+import com.canhdinh.lib.toasty.Toasty;
 import com.canhdinh.lib.togglebutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
@@ -120,8 +121,26 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         falcon = findViewById(R.id.falcon);
         bubble = findViewById(R.id.bubble);
         path = findViewById(R.id.path);
+        Button waterview = findViewById(R.id.waterview);
 
         show_dialog_btn = findViewById(R.id.show_dialog);
+
+        findViewById(R.id.button_error_toast).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toasty.error(MainActivity.this, "Lỗi", Toasty.LENGTH_SHORT, true).show();
+            }
+        });
+        findViewById(R.id.button_success_toast).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toasty.success(MainActivity.this, "Thành công", Toasty.LENGTH_SHORT, true).show();
+            }
+        });
+
+        waterview.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, WareViewActivity.class));
+        });
 
         final CircleMenuView menu = findViewById(R.id.circle_menu);
         menu.setEventListener(new CircleMenuView.EventListener() {

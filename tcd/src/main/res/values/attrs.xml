@@ -886,4 +886,26 @@
         <attr name="distance" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="AnimatedCircleLoadingView">
+        <attr name="animCircleLoadingView_mainColor" format="color" localization="suggested" />
+        <attr name="animCircleLoadingView_secondaryColor" format="color" localization="suggested" />
+        <attr name="animCircleLoadingView_checkMarkTintColor" format="color" localization="suggested" />
+        <attr name="animCircleLoadingView_failureMarkTintColor" format="color" localization="suggested" />
+        <attr name="animCircleLoadingView_textColor" format="color" localization="suggested" />
+    </declare-styleable>
+
+    <declare-styleable name="WaterView">
+        <attr name="waveWaterLevel" format="float" />
+        <attr name="amplitudeRatio" format="float" />
+        <attr name="waveLengthRatio" format="float" />
+        <attr name="waveShiftRatio" format="float" />
+        <attr name="frontWaveColor" format="color" />
+        <attr name="behindWaveColor" format="color" />
+        <attr name="waveShape" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+        </attr>
+        <attr name="showWave" format="boolean" />
+    </declare-styleable>
+
 </resources>
