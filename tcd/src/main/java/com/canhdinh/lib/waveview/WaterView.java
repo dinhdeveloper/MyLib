@@ -97,14 +97,14 @@ public class WaterView extends View {
         TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs,
                 R.styleable.WaterView, 0, 0);
 
-        mAmplitudeRatio = typedArray.getFloat(R.styleable.WaterView_amplitudeRatio, DEFAULT_AMPLITUDE_RATIO);
-        mWaterLevelRatio = typedArray.getFloat(R.styleable.WaterView_waveWaterLevel, DEFAULT_WATER_LEVEL_RATIO);
-        mWaveLengthRatio = typedArray.getFloat(R.styleable.WaterView_waveLengthRatio, DEFAULT_WAVE_LENGTH_RATIO);
-        mWaveShiftRatio = typedArray.getFloat(R.styleable.WaterView_waveShiftRatio, DEFAULT_WAVE_SHIFT_RATIO);
-        mFrontWaveColor = typedArray.getColor(R.styleable.WaterView_frontWaveColor, DEFAULT_FRONT_WAVE_COLOR);
-        mBehindWaveColor = typedArray.getColor(R.styleable.WaterView_behindWaveColor, DEFAULT_BEHIND_WAVE_COLOR);
-        mShapeType = typedArray.getInt(R.styleable.WaterView_waveShape, 0) == 0 ? ShapeType.CIRCLE : ShapeType.SQUARE;
-        mShowWave = typedArray.getBoolean(R.styleable.WaterView_showWave, true);
+        mAmplitudeRatio = typedArray.getFloat(R.styleable.WaterView_amplitudeRatio_1, DEFAULT_AMPLITUDE_RATIO);
+        mWaterLevelRatio = typedArray.getFloat(R.styleable.WaterView_waveWaterLevel_1, DEFAULT_WATER_LEVEL_RATIO);
+        mWaveLengthRatio = typedArray.getFloat(R.styleable.WaterView_waveLengthRatio_1, DEFAULT_WAVE_LENGTH_RATIO);
+        mWaveShiftRatio = typedArray.getFloat(R.styleable.WaterView_waveShiftRatio_1, DEFAULT_WAVE_SHIFT_RATIO);
+        mFrontWaveColor = typedArray.getColor(R.styleable.WaterView_frontWaveColor_1, DEFAULT_FRONT_WAVE_COLOR);
+        mBehindWaveColor = typedArray.getColor(R.styleable.WaterView_behindWaveColor_1, DEFAULT_BEHIND_WAVE_COLOR);
+        mShapeType = typedArray.getInt(R.styleable.WaterView_waveShape_1, 0) == 0 ? ShapeType.CIRCLE : ShapeType.SQUARE;
+        mShowWave = typedArray.getBoolean(R.styleable.WaterView_showWave_1, true);
 
         typedArray.recycle();
 
