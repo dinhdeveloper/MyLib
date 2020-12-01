@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         bubble = findViewById(R.id.bubble);
         path = findViewById(R.id.path);
         Button waterview = findViewById(R.id.waterview);
+        Button three_d_animation_example = findViewById(R.id.three_d_animation_example);
 
         show_dialog_btn = findViewById(R.id.show_dialog);
 
@@ -138,6 +139,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             }
         });
 
+        three_d_animation_example.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this,ThreeDAnimationActivity.class));
+        });
         waterview.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, WareViewActivity.class));
         });
