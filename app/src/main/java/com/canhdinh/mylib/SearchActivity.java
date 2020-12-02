@@ -48,7 +48,7 @@ public class SearchActivity extends AppCompatActivity implements WaveSwipeRefres
         mWaveSwipeRefreshLayout.setWaveColor(Color.argb(100, 255, 0, 0));
 
         rippleView.setOnRippleCompleteListener(rippleView1 -> {
-            MyToast.show(SearchActivity.this, "ok");
+            getDataApi();
         });
     }
 
@@ -125,8 +125,7 @@ public class SearchActivity extends AppCompatActivity implements WaveSwipeRefres
                 results.values = new ArrayList<Product>();
                 results.count = 0;
                 try {
-                    ArrayList<Product> users = (ArrayList<Product>) apiService.searchProduct(charSequence.toString())
-                            .execute().body();
+                    ArrayList<Product> users = (ArrayList<Product>) apiService.searchProduct(charSequence.toString()).execute().body();
                     if (users != null) {
                         results.values = users;
                         results.count = users.size();
