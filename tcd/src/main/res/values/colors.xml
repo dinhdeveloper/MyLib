@@ -96,7 +96,7 @@
     <color name="range_bg_color_app">#FFCDD2</color>
     <color name="range_date_color">@color/default_date_color</color>
     <color name="red">#e31b23</color>
-    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_color">#C84F37</color>
     <color name="red_btn_bg_pressed_color">#CD5B55</color>
     <color name="red_press">#b61619</color>
     <color name="selected_date_circle_color">#54B948</color>
@@ -135,4 +135,12 @@
     <color name="default_action_color">#26a69a</color>
 
     <color name="ksnack_dark">#3d3d3d</color>
+    <color name="text_black">#000</color>
+
+    <color name="defaultTextColor">#FFFFFF</color>
+    <color name="errorColor">#D50000</color>
+    <color name="infoColor">#3F51B5</color>
+    <color name="successColor">#388E3C</color>
+    <color name="warningColor">#FFA900</color>
+    <color name="normalColor">#353A3E</color>
 </resources>

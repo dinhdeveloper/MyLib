@@ -181,9 +181,23 @@
     <string name="refreshing">đang tải...</string>
     <string name="refresh_done">hoàn tất</string>
     <string name="loading_done">hoàn tất</string>
-<!--    <string name="listview_header_last_time">cập nhật</string>-->
+    <string name="view_pager_bottom_sheet_behavior" translatable="false">com.allattentionhere.fabulousfilter.viewpagerbottomsheet.ViewPagerBottomSheetBehavior</string>
+
+    <!--    <string name="listview_header_last_time">cập nhật</string>-->
 
     <string name="action">ACTION</string>
+
+    <string name="dialog_done_text">Chọn</string>
+    <string name="dialog_cancel_text">Hủy bỏ</string>
+    <string name="list_empty">Không có dữ liệu</string>
+    <string name="select_entry">Chọn mục</string>
+    <string name="validation_text">Vui lòng chọn ít nhất một tùy chọn</string>
+    <string name="please_select_atleast">Vui lòng chọn ít nhất </string>
+    <string name="you_can_only_select_upto">Bạn chỉ có thể chọn tối đa </string>
+    <string name="option"> lựa chọn</string>
+    <string name="options"> lựa chọn</string>
+    <string name="select_all"> Chọn tất cả</string>
+    <string name="de_select_all"> Bỏ chọn tất cả</string>
 
 <!--    <style name="Animations_PopDownMenu_Center">-->
 <!--        <item name="android:windowEnterAnimation">@anim/grow_from_top</item>-->
@@ -301,13 +315,43 @@
         <item name="android:backgroundDimAmount">0.4</item>
     </style>
 
+ <style name="alert_dialog_add"  parent="android:Widget.Button">
+     <item name="android:layout_width">wrap_content</item>
+     <item name="android:minWidth">32dp</item>
+     <item name="android:layout_height">33dp</item>
+     <item name="android:background">@drawable/green_button_background_alert</item>
+     <item name="android:textSize">14sp</item>
+     <item name="android:paddingLeft">19dp</item>
+     <item name="android:paddingRight">19dp</item>
+     <item name="android:textColor">@color/button_text_color</item>
+     <item name="android:layout_weight">1</item>
+     <item name="android:lines">1</item>
+ </style>
+
     <style name="dialog_button" parent="android:Widget.Button">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">31dp</item>
+        <item name="android:layout_height">33dp</item>
 <!--        <item name="android:background">@drawable/button_background</item>-->
         <item name="android:textSize">14sp</item>
-        <item name="android:paddingLeft">21dp</item>
-        <item name="android:paddingRight">21dp</item>
+        <item name="android:paddingLeft">19dp</item>
+        <item name="android:paddingRight">19dp</item>
         <item name="android:textColor">@color/button_text_color</item>
+    </style>
+
+    <style name="NumberInPasscode">
+        <item name="android:layout_width">54dp</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:background">@drawable/layout_selector_tran</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style
+        name="dialog_animation_fade" >
+        <item name="android:windowEnterAnimation">@anim/bottomsheet_enter</item>
+        <item name="android:windowExitAnimation">@anim/bottomsheet_exit</item>
     </style>
 </resources>

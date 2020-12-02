@@ -371,6 +371,10 @@ public class SnackAlert extends Dialog {
             super.onBackPressed();
     }
 }
-
-
+//
+//new SnackAlert(MainActivity.this)
+//        .setTitle("Success")
+//        .setMessage("This is a success message")
+//        .setType(SnackAlert.SUCCESS)
+//        .setDurationAnimationShow(600).show());
 

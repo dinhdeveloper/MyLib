@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 
-import com.canhdinh.helper.LanguageHelper;
 import com.google.gson.Gson;
 
 import java.util.Locale;
@@ -230,61 +229,6 @@ public class SharePrefs  {
 
     public String getUserImage() {
         return get(PREF_USER_IMAGE, "");
-    }
-
-
-    /**
-     * Trả về ngôn ngữ ứng dụng theo ngôn ngữ máy
-     *
-     * @return locale code of application language
-     */
-    public Locale getLanguageAsLocale(Resources resources) {
-        try {
-            String value = get(PREF_LANGUAGE, "");
-
-            if (TextUtils.isEmpty(value)) {
-                String deviceLocale = LanguageHelper.getDashFormatFromLocale(resources.getConfiguration().locale);
-                value = LanguageHelper.getValidLanguage(deviceLocale);
-                saveLanguage(value);
-            }
-
-            String language = LanguageHelper.toDashFormat(value);
-
-            return LanguageHelper.getLocaleFromDashFormat(language);
-        } catch (Exception e) {
-            return Locale.UK;
-        }
-    }
-
-
-    /**
-     * Trả về ngôn ngữ ứng dụng
-     *
-     * @return locale code of application language
-     */
-    public Locale getLanguageAsLocale() {
-        try {
-            String value = get(PREF_LANGUAGE, "");
-
-            if (!TextUtils.isEmpty(value)) {
-                String language = LanguageHelper.toDashFormat(value);
-
-                return LanguageHelper.getLocaleFromDashFormat(language);
-            } else {
-                return Locale.UK;
-            }
-        } catch (Exception e) {
-            return Locale.UK;
-        }
-    }
-
-    /**
-     * Lưu ngôn ngữ ứng dụng
-     *
-     * @param language locale code
-     */
-    public void saveLanguage(String language) {
-        save(PREF_LANGUAGE, LanguageHelper.getValidLanguage(language));
     }
 
     public void saveToken(String token) {

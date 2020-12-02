@@ -20,6 +20,14 @@
             android:layout_margin="@dimen/dp20"
             android:orientation="vertical">
 
+            <com.canhdinh.lib.circlemenu.CircleMenuView
+                android:id="@+id/circle_menu"
+                app:icon_color="@color/progressColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:button_colors="@array/colors"
+                app:button_icons="@array/icons" />
+
             <com.canhdinh.lib.countdownview.CountDownView
                 android:id="@+id/view_count_down"
                 android:layout_width="wrap_content"
@@ -31,6 +39,41 @@
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:text="startcountdown" />
+
+            <Button
+                android:id="@+id/three_d_animation_example"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="three_d_animation_example"
+                />
+
+            <Button
+                android:id="@+id/waterview"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="waterview" />
+
+            <Button
+                android:text="error_toast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/button_error_toast"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:text="success_toast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button_error_toast"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/button_success_toast"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
             <Button
                 android:id="@+id/search"
@@ -146,9 +189,16 @@
                 android:layout_height="40dp"
                 android:text="imageslider" />
 
+            <Button
+                android:id="@+id/kAlert"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="KAlertDialog" />
+
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="50dp">
+
                 <com.canhdinh.lib.labelview.LabelTextView
                     android:id="@+id/text"
                     android:layout_width="wrap_content"
@@ -165,7 +215,7 @@
                     app:label_orientation="RIGHT_TOP"
                     app:label_text="POP"
                     app:label_textSize="10sp"
-                    app:label_textStyle="BOLD_ITALIC"/>
+                    app:label_textStyle="BOLD_ITALIC" />
             </LinearLayout>
 
 
@@ -203,6 +253,76 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/passcode"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="passcode" />
+
+            <Button
+                android:id="@+id/grav_v"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="grav" />
+
+            <Button
+                android:id="@+id/robot"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="robot" />
+
+            <Button
+                android:id="@+id/ball_wave"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="ball_wave" />
+
+            <Button
+                android:id="@+id/falcon"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="falcon" />
+
+            <Button
+                android:id="@+id/bubble"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="bubble" />
+
+
+            <Button
+                android:id="@+id/path"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="path" />
+
+            <Button
+                android:id="@+id/show_dialog"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="show_multi_select_dialog"
+                />
+
+
+            <com.canhdinh.lib.alert.CircleProgress
+                android:id="@+id/circleProgress"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:progressBorderWidth="1sp"
+                app:showArrow="true" />
+
+            <com.canhdinh.lib.alert.JumpBall
+                android:id="@+id/jump_ball"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
             <com.canhdinh.lib.textview.PinTextView
                 android:id="@+id/pinview"
@@ -271,7 +391,6 @@
                 app:fet_hintText="100 000 2020 0101 000X"
                 app:fet_mode="mode_hint"
                 app:fet_showHintWhileEmpty="false" />
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

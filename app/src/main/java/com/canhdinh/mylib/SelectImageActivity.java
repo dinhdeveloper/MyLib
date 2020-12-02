@@ -10,15 +10,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.canhdinh.api.ApiRequest;
-import com.canhdinh.api.ErrorApiResponse;
 import com.canhdinh.lib.alert.AlertError;
 import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.roundview.RoundTextView;
 import com.canhdinh.lib.selectimage.BSImagePicker;
 import com.canhdinh.mylib.api.APIService;
 import com.canhdinh.mylib.api.APIUntil;
-import com.canhdinh.mylib.api.RequestUpdateResultPayment;
 import com.canhdinh.mylib.api.ServiceGenerator;
 import com.canhdinh.mylib.model.BaseResponseModel;
 import com.canhdinh.mylib.model.BookingResultModel;

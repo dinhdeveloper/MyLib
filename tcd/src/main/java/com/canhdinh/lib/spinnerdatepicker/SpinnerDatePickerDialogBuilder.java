@@ -82,3 +82,12 @@ public class SpinnerDatePickerDialogBuilder {
         return new DatePickerDialog(context, theme, spinnerTheme, callBack, onCancel, defaultDate, minDate, maxDate, isDayShown, isTitleShown, customTitle);
     }
 }
+//
+//new SpinnerDatePickerDialogBuilder()
+//        .context(MainActivity.this)
+//        .callback(MainActivity.this)
+//        .onCancel(MainActivity.this)
+//        .spinnerTheme(spinnerTheme)
+//        .defaultDate(year, monthOfYear, dayOfMonth)
+//        .build()
+//        .show();

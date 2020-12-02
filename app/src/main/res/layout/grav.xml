@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="com.canhdinh.mylib.AnimationActivity">
+
+    <com.canhdinh.lib.grav.GravView
+        android:id="@+id/grav"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        app:animationGenerators="@array/path"
+        app:array_colors="@array/red"
+        app:ball_size_from_size="3dp"
+        app:ball_size_to_size="6dp"
+        app:colorGenerator="com.canhdinh.lib.grav.generator.paint.ArrayColorGenerator"
+        app:gravGenerator="com.canhdinh.lib.grav.generator.grav.BallGenerator"
+        app:path="@string/circle"
+        app:path_max_duration="6000"
+        app:path_min_duration="5000"
+        app:path_original_height="@integer/circle_original_height"
+        app:path_original_width="@integer/circle_original_width"
+        app:path_variance_from="-10dp"
+        app:path_variance_to="12dp"
+        app:pointGenerator="com.canhdinh.lib.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="150"
+        app:regular_variance="100" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/grav_background"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>
