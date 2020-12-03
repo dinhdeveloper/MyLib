@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ThreeDAnimationActivity"></activity>
+        <activity android:name=".FlowingActivity"></activity>
+        <activity android:name=".DuoMenuActivity" />
+        <activity android:name=".ThreeDAnimationActivity" />
         <activity android:name=".WareViewActivity" />
         <activity android:name=".AnimationActivity" />
         <activity android:name=".PassCodeActivity" />

@@ -7,24 +7,23 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.canhdinh.SliderActivity;
 import com.canhdinh.lib.alert.AlertConfirm;
 import com.canhdinh.lib.alert.AlertDialog;
-import com.canhdinh.lib.alert.AlertError;
 import com.canhdinh.lib.alert.AlertSuccess;
 import com.canhdinh.lib.alert.CircleProgress;
 import com.canhdinh.lib.alert.CustomAlertDialog;
@@ -34,8 +33,8 @@ import com.canhdinh.lib.colorpicker.ColorPickerDialog;
 import com.canhdinh.lib.cookiebar.CookieBar;
 import com.canhdinh.lib.countdownview.CountDownView;
 import com.canhdinh.lib.edittext.FormattedEditText;
+import com.canhdinh.lib.explosionfield.ExplosionField;
 import com.canhdinh.lib.helper.MyToast;
-import com.canhdinh.lib.kalert.KAlertDialog;
 import com.canhdinh.lib.ksnack.KSnack;
 import com.canhdinh.lib.ksnack.KSnackBarEventListener;
 import com.canhdinh.lib.ksnack.Slide;
@@ -84,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private KSnack kSnack;
     int DefaultColor;
     String hexColor;
+    private ExplosionField mExplosionField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         setContentView(R.layout.activity_main);
 
         kSnack = new KSnack(MainActivity.this);
+        mExplosionField = ExplosionField.attach2Window(this);
+        addListener(findViewById(R.id.root));
 
         Button snackAlert = findViewById(R.id.snackAlert);
         Button set_date_button = findViewById(R.id.set_date_button);
@@ -129,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         findViewById(R.id.button_error_toast).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DuoMenuActivity.class));
                 Toasty.error(MainActivity.this, "Lỗi", Toasty.LENGTH_SHORT, true).show();
             }
         });
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         });
 
         three_d_animation_example.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this,ThreeDAnimationActivity.class));
+            startActivity(new Intent(MainActivity.this, ThreeDAnimationActivity.class));
         });
         waterview.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, WareViewActivity.class));
@@ -401,12 +404,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     System.out.println("Stopped");
                 }
             })
-                    .setAction("Click", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Toast.makeText(MainActivity.this, "kSnack", Toast.LENGTH_SHORT).show();
-                            kSnack.dismiss();
-                        }
+                    .setAction("Click", v1 -> {
+                        startActivity(new Intent(MainActivity.this, FlowingActivity.class));
+                        kSnack.dismiss();
                     })
                     .setButtonTextColor(R.color.colorAccent)
                     .setMessage("This is KSnack !")
@@ -618,5 +618,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 .show();
     }
 
-
+    private void addListener(View root) {
+        if (root instanceof ViewGroup) {
+            ViewGroup parent = (ViewGroup) root;
+            for (int i = 0; i < parent.getChildCount(); i++) {
+                addListener(parent.getChildAt(i));
+            }
+        } else {
+            root.setClickable(true);
+            root.setOnClickListener(v -> {
+                mExplosionField.explode(v);
+                v.setOnClickListener(null);
+            });
+        }
+    }
 }
